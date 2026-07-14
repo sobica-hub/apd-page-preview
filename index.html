@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社APD - オンライン法定研修・運営指導対策・認知症GH経営支援</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#1bbb86',     /* 鮮やかなミントグリーン */
+                        brandGreenLight: '#e8f8f3',/* 優しい緑 of 背景用 */
+                        brandOrange: '#ff8d42',    /* アクセントオレンジ */
+                        brandOrangeHover: '#e67325',
+                        brandOrangeLight: '#fff4ec',/* オレンジ of 背景用 */
+                        textDark: '#2d3748',       /* 柔らかい黒 */
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    }
+                }
+            }
+        };
+
+        // 画像制御関数を早期定義
+        function imageLoaded(imgElement) {
+            const src = imgElement.getAttribute('src');
+            if (!src || src.trim() === "" || src === "#") {
+                imageLoadError(imgElement);
+                return;
+            }
+            imgElement.classList.remove('hidden');
+            const placeholder = imgElement.nextElementSibling;
+            if (placeholder && placeholder.classList.contains('placeholder-fallback')) {
+                placeholder.classList.add('hidden');
+            }
+        }
+
+        function imageLoadError(imgElement) {
+            imgElement.classList.add('hidden');
+            const placeholder = imgElement.nextElementSibling;
+            if (placeholder && placeholder.classList.contains('placeholder-fallback')) {
+                placeholder.classList.remove('hidden');
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-textDark antialiased leading-relaxed overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="bg-white border-b border-gray-100 py-3 px-3 md:px-8 overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-row justify-between items-center gap-1 sm:gap-2">
+            <!-- Logo & Brand Name -->
+            <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group flex-shrink-0">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-brandGreen text-white rounded-xl flex items-center justify-center font-bold shadow-md shadow-brandGreen/25 transform group-hover:rotate-3 transition-transform flex-shrink-0">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
+                </div>
+                <div class="flex-shrink-0">
+                    <h1 class="text-sm sm:text-lg md:text-2xl font-black tracking-wider text-gray-800 leading-none">株式会社APD</h1>
+                </div>
+            </a>
+            
+            <!-- Catchphrase (Right) -->
+            <div class="text-right text-xs text-gray-600 font-bold flex-shrink-1 min-w-0 max-w-[170px] sm:max-w-none">
+                <p class="text-brandGreen font-extrabold text-[9px] sm:text-xs leading-none">【介護事業者向け】</p>
+                <p class="text-[8px] sm:text-[10px] md:text-[11px] text-gray-500 font-medium mt-1 leading-tight sm:leading-snug break-all sm:break-normal">
+                    オンライン法定研修・運営指導対策・認知症GH経営支援
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="bg-brandGreen sticky top-0 z-40 shadow-md overflow-hidden">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-between sm:justify-center items-center py-2 sm:py-3.5 px-2 text-white text-[10px] sm:text-sm md:text-base font-bold gap-0.5 sm:gap-2 w-full max-w-full tracking-tighter sm:tracking-normal">
+                <a href="index.html" class="px-1 py-1 text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">ホーム</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="sns.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">YouTube<br class="inline sm:hidden">・SNS</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="service.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">サービス<br class="inline sm:hidden">概要</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="profile.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">代表<br class="inline sm:hidden">挨拶</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="company.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">会社<br class="inline sm:hidden">概要</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="contact.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">お問い<br class="inline sm:hidden">合わせ</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="w-full min-h-screen bg-white overflow-hidden">
+
+        <!-- HERO SECTION -->
+        <section class="border-b border-gray-150 w-full">
+            <div class="w-full bg-emerald-50 overflow-hidden aspect-[16/9] md:aspect-[2.4/1] md:max-h-[450px] flex items-center justify-center relative border-b border-emerald-100 shadow-inner">
+                <img src="23277795_m.jpg" alt="株式会社APDメインイメージ" class="w-full h-full object-cover hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                <div class="placeholder-fallback flex flex-col items-center text-center p-6 text-brandGreen">
+                    <div class="w-16 h-16 bg-brandGreen/10 rounded-full flex items-center justify-center mb-3">
+                        <i class="fa-regular fa-image text-3xl"></i>
+                    </div>
+                    <p class="font-extrabold text-sm md:text-base">メインヒーロー画像エリア</p>
+                    <p class="text-[9px] sm:text-[11px] opacity-75 mt-1 leading-snug">推奨サイズ: 1200px × 675px (16:9)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: 公式YouTube・SNS -->
+        <section id="youtube-sns" class="py-6 sm:py-8 md:py-12 bg-white scroll-mt-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+                <div class="w-full bg-orange-50/70 rounded-xl sm:rounded-2xl overflow-hidden aspect-[2.4/1] mb-5 flex items-center justify-center relative border border-orange-100 shadow-sm">
+                    <img src="2695083_m_Trimming.jpg" alt="公式YouTube・SNSイメージ" class="w-full h-full object-cover hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                    <div class="placeholder-fallback flex flex-col items-center text-center p-3 text-brandOrange">
+                        <div class="w-10 h-10 bg-brandOrange/10 rounded-full flex items-center justify-center mb-1">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </div>
+                        <p class="font-extrabold text-[10px] sm:text-xs md:text-sm">公式YouTube・SNS紹介画像エリア</p>
+                        <p class="text-[9px] opacity-75 mt-0.5">推奨サイズ: 1200px × 500px</p>
+                    </div>
+                </div>
+
+                <!-- SUBHEADING DESIGN -->
+                <div class="mb-5 flex flex-col items-start gap-1">
+                    <h3 class="text-xl sm:text-xl md:text-2xl font-black text-gray-800 flex items-center gap-2.5 relative pl-4">
+                        <span class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brandOrange to-orange-300 rounded-full"></span>
+                        公式YouTube・SNS
+                    </h3>
+                    <div class="flex w-full items-center gap-1.5 mt-1.5">
+                        <div class="w-12 h-0.5 bg-brandOrange rounded-full"></div>
+                        <div class="w-1.5 h-0.5 bg-brandOrange/30 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Content text -->
+                <div class="space-y-4">
+                    <div class="space-y-4 py-2">
+                        <div class="flex items-start gap-2.5 py-1 border-b border-gray-100 pb-3 items-center">
+                            <span class="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-brandOrange"></span>
+                            <h4 class="text-sm sm:text-base md:text-lg font-bold text-gray-600 leading-snug">24年法改正対応！法定研修のお悩み解決動画</h4>
+                        </div>
+                        
+                        <div class="flex items-start gap-2.5 py-1 border-b border-gray-100 pb-3 items-center">
+                            <span class="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-brandOrange"></span>
+                            <h4 class="text-sm sm:text-base md:text-lg font-bold text-gray-600 leading-snug">経営者・管理者の悩みを解決するノウハウ発信</h4>
+                        </div>
+
+                        <div class="flex items-start gap-2.5 py-1 items-center">
+                            <span class="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-brandOrange"></span>
+                            <h4 class="text-sm sm:text-base md:text-lg font-bold text-gray-600 leading-snug">負担減と個別指導対策を両立する秘訣は<br class="inline sm:hidden">こちら</h4>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-4 text-center">
+                        <a href="sns.html" class="inline-flex items-center justify-center bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-lg sm:text-lg px-8 py-3.5 sm:px-12 sm:py-4 rounded-full shadow-lg shadow-brandOrange/35 hover:shadow-brandOrange/50 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[48px]">
+                            <i class="fab fa-youtube mr-2 text-lg sm:text-xl"></i> 動画を見る
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: サービス概要 -->
+        <section id="service" class="py-6 sm:py-8 md:py-12 bg-brandGreen text-white scroll-mt-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+                <div class="w-full bg-white/10 rounded-xl sm:rounded-2xl overflow-hidden aspect-[2.4/1] mb-5 flex items-center justify-center relative border border-white/20">
+                    <img src="kaigiPAKE9148_TP_V.jpg" alt="サービス概要イメージ" class="w-full h-full object-cover hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                    <div class="placeholder-fallback flex flex-col items-center text-center p-3 text-white">
+                        <div class="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mb-1">
+                            <i class="fa-solid fa-hand-holding-hand text-xl"></i>
+                        </div>
+                        <p class="font-extrabold text-[10px] sm:text-xs md:text-sm">サービス紹介画像エリア</p>
+                        <p class="text-[9px] opacity-75 mt-0.5">推奨サイズ: 1200px × 500px</p>
+                    </div>
+                </div>
+
+                <!-- SUBHEADING -->
+                <div class="mb-5 flex flex-col items-start gap-1">
+                    <h3 class="text-xl md:text-2xl font-black text-white flex items-center gap-3 relative pl-4">
+                        <span class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brandOrange to-orange-300 rounded-full"></span>
+                        サービス概要
+                    </h3>
+                    <div class="flex w-full items-center gap-1.5 mt-2">
+                        <div class="w-16 h-1 bg-white rounded-full"></div>
+                        <div class="w-2 h-1 bg-white/30 rounded-full"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="py-1 space-y-3">
+                        <div class="text-left pb-2 border-b border-white/10">
+                            <h4 class="text-base sm:text-lg md:text-xl font-bold text-white tracking-wide inline-flex items-center gap-1.5 sm:gap-2 leading-snug">
+                                介護事業所の経営と現場を実践支援
+                            </h4>
+                        </div>
+
+                        <ul class="space-y-2.5 text-sm sm:text-base md:text-lg font-bold tracking-wide text-white">
+                            <li class="flex items-start gap-3 py-1 border-b border-white/10 pb-1.5 last:border-b-0 last:pb-0 items-center">
+                                <span class="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-white"></span>
+                                <span class="leading-normal">オンライン法定研修（1万円～）</span>
+                            </li>
+                            <li class="flex items-start gap-3 py-1 border-b border-white/10 pb-1.5 last:border-b-0 last:pb-0 items-center">
+                                <span class="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-white"></span>
+                                <span class="leading-normal">利用契約書・重要事項説明書の動画作成</span>
+                            </li>
+                            <li class="flex items-start gap-3 py-1 items-center">
+                                <span class="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-white"></span>
+                                <span class="leading-normal">認知症グループホーム経営改善支援<br class="inline sm:hidden">【無料相談受付中】</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-4 text-center">
+                        <a href="service.html" class="inline-flex items-center justify-center bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-lg sm:text-lg px-8 py-3.5 sm:px-12 sm:py-4 rounded-full shadow-lg shadow-black/20 hover:shadow-black/35 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[48px]">
+                         <i class="fa-solid fa-circle-info mr-2 text-lg"></i> サービスを見る
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: 代表挨拶 -->
+        <section id="profile" class="py-6 sm:py-8 md:py-12 bg-white scroll-mt-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+                <div class="w-full bg-slate-50 rounded-xl sm:rounded-2xl overflow-hidden aspect-[2.4/1] mb-6 flex items-center justify-center relative border border-slate-100">
+                    <img src="Ishibayashi_Size adjustment.png" alt="株式会社APD代表写真" class="w-full h-full object-cover hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                    <div class="placeholder-fallback flex flex-col items-center text-center p-3 text-slate-500">
+                        <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center mb-1">
+                            <i class="fa-solid fa-user-tie text-xl"></i>
+                        </div>
+                        <p class="font-extrabold text-[10px] sm:text-xs md:text-sm">代表プロフィール画像エリア</p>
+                        <p class="text-[9px] opacity-75 mt-0.5">推奨サイズ: 1200px × 500px</p>
+                    </div>
+                </div>
+
+                <!-- SUBHEADING -->
+                <div class="mb-5 flex flex-col items-start gap-1">
+                    <h3 class="text-xl md:text-2xl font-black text-gray-800 flex items-center gap-3 relative pl-4">
+                        <span class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brandOrange to-orange-300 rounded-full"></span>
+                        代表挨拶
+                    </h3>
+                    <div class="flex w-full items-center gap-1.5 mt-2">
+                        <div class="w-16 h-1 bg-brandOrange rounded-full"></div>
+                        <div class="w-2 h-1 bg-brandOrange/30 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Paragraphs -->
+                <div class="space-y-4">
+                    <p class="text-sm sm:text-base md:text-lg text-gray-600 font-medium leading-relaxed">
+                        介護は人生の最終幕を支える尊い使命。<br class="inline sm:hidden">現場で25年。<br>
+                        <span class="inline-block sm:inline whitespace-normal sm:whitespace-nowrap tracking-tight text-sm sm:text-base md:text-lg">介護職の疲弊や経営者の悩みを痛感しました。</span><br>
+                        株式会社APD設立への想いをお伝えします。
+                    </p>
+
+                    <!-- CTA Button -->
+                    <div class="pt-4 text-center">
+                        <a href="profile.html" class="inline-flex items-center justify-center bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-lg sm:text-lg px-8 py-3.5 sm:px-12 sm:py-4 rounded-full shadow-lg shadow-brandOrange/35 hover:shadow-brandOrange/50 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[48px]">
+                         <i class="fa-solid fa-user-tie mr-2 text-lg"></i> 代表の想いを読む
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: 会社概要 -->
+        <section id="company" class="py-6 sm:py-8 md:py-12 bg-brandGreen text-white scroll-mt-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+                <div class="w-full bg-white/10 rounded-xl sm:rounded-2xl overflow-hidden aspect-[2.4/1] mb-5 flex items-center justify-center relative border border-white/20">
+                    <img src="A7406499_TP_V.jpg" alt="会社概要イメージ" class="w-full h-full object-cover hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                    <div class="placeholder-fallback flex flex-col items-center text-center p-4 text-white">
+                        <div class="w-12 h-12 bg-white/15 rounded-full flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-building text-2xl"></i>
+                        </div>
+                        <p class="font-extrabold text-[10px] sm:text-xs md:text-sm">オフィス・建物イメージ画像エリア</p>
+                        <p class="text-[9px] opacity-75 mt-0.5">推奨サイズ: 1200px × 500px</p>
+                    </div>
+                </div>
+
+                <!-- SUBHEADING -->
+                <div class="mb-5 flex flex-col items-start gap-1">
+                    <h3 class="text-xl md:text-2xl font-black text-white flex items-center gap-3 relative pl-4">
+                        <span class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brandOrange to-orange-300 rounded-full"></span>
+                        会社概要
+                    </h3>
+                    <div class="flex w-full items-center gap-1.5 mt-2">
+                        <div class="w-16 h-1 bg-white rounded-full"></div>
+                        <div class="w-2 h-1 bg-white/30 rounded-full"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="space-y-4">
+                        <h4 class="text-[22px] sm:text-2xl md:text-3xl font-demibold tracking-widest text-left text-white">株式会社APD</h4>
+                        
+                        <div class="mt-4 text-white">
+                            <p class="text-sm sm:text-base md:text-lg font-medium leading-relaxed">
+                                <span class="block tracking-tight sm:tracking-normal whitespace-normal sm:whitespace-nowrap">介護教育・支援会社で、研修や現場支援を行い</span>
+                                <span class="block mt-1 sm:mt-2" style="text-indent: -0.85em; padding-left: 0.85em; font-feature-settings: 'palt'; letter-spacing: -0.01em; line-height: 1.6;">「夢のある介護」を理念に笑顔を大切にしています。</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-4 text-center">
+                        <a href="company.html" class="inline-flex items-center justify-center bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-lg sm:text-lg px-8 py-3.5 sm:px-12 sm:py-4 rounded-full shadow-lg shadow-black/20 hover:shadow-black/35 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[48px]">
+                          <i class="fa-solid fa-building me-2 text-lg"></i> 会社概要を見る
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: お問い合わせ -->
+        <section id="contact" class="py-6 sm:py-8 md:py-12 bg-white scroll-mt-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+                <div class="w-full bg-slate-50 rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/1] mb-5 flex items-center justify-center relative border border-slate-150 shadow-sm">
+                    <img src="33953265_m_Trimming.jpg" alt="お問い合わせイメージ" class="w-full h-full object-cover hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                    <div class="placeholder-fallback flex flex-col items-center text-center p-2 text-slate-400">
+                        <div class="w-8 h-8 bg-slate-200 rounded-full flex items-center justify-center mb-1">
+                            <i class="fa-regular fa-comments text-lg"></i>
+                        </div>
+                        <p class="font-extrabold text-[10px] sm:text-xs">お問い合わせイメージバナー領域</p>
+                        <p class="text-[8px] sm:text-[9px] opacity-75">推奨サイズ: 1200px × 300px</p>
+                    </div>
+                </div>
+
+                <!-- SUBHEADING -->
+                <div class="mb-5 flex flex-col items-start gap-1">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-black text-gray-800 flex items-center gap-2.5 relative pl-4">
+                        <span class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brandOrange to-orange-300 rounded-full"></span>
+                        お問い合わせ
+                    </h3>
+                    <div class="flex w-full items-center gap-1 mt-1.5">
+                        <div class="w-12 h-0.5 bg-brandOrange rounded-full"></div>
+                        <div class="w-1.5 h-0.5 bg-brandOrange/30 rounded-full"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="text-left space-y-4">
+                        <p class="text-sm sm:text-base md:text-lg text-gray-600 font-medium leading-relaxed">
+                            事業サポートの相談やご応募・その他<br>お問い合わせはお気軽にフォームからご連絡ください。
+                        </p>
+                        <p class="text-sm sm:text-base md:text-lg text-red-500 font-bold leading-relaxed">
+                            ※営業連絡はおことわりいたします。
+                        </p>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-2 text-center">
+                        <a href="contact.html" class="inline-flex items-center justify-center bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-base sm:text-lg px-8 py-3.5 sm:px-12 sm:py-4 rounded-full shadow-lg shadow-brandOrange/35 hover:shadow-brandOrange/50 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[48px]">
+                         <i class="fa-solid fa-envelope mr-2 text-lg"></i> 無料相談をする
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandGreen text-white py-10 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <!-- Social Accounts -->
+            <div class="space-y-4">
+                <h4 class="text-base sm:text-lg font-bold tracking-wider">公式SNSアカウント</h4>
+                <div class="flex justify-center items-center gap-5 sm:gap-6 text-2xl sm:text-3xl md:text-4xl">
+                    <a href="https://www.instagram.com/kaigo_no_hidechannel/" target="_blank" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" onclick="return false;" title="Facebook（URL確認中）" aria-disabled="true" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" onclick="return false;" title="TikTok（URL確認中）" aria-disabled="true" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <!-- Threads Inline SVG -->
+                    <a href="https://www.threads.com/@kaigo_no_hidechannel?xmt=AQG0LuBmjoE1n0MAFNwBetNoZ9_e8P_bYN0vwNJ0SV557wQ" target="_blank" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2 flex items-center justify-center" title="Threads">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-threads w-[1em] h-[1em]" viewBox="0 0 16 16">
+                            <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com/@HIDEKING-APD?sub_confirmation=1" target="_blank" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand / Logo bottom -->
+            <div class="space-y-2 pt-4 border-t border-white/20">
+                <div class="flex justify-center items-center gap-2">
+                    <div class="w-7 h-7 bg-white text-brandGreen rounded flex items-center justify-center font-bold text-sm flex-shrink-0">
+                        A
+                    </div>
+                    <span class="text-lg sm:text-xl font-black tracking-wider">株式会社APD</span>
+                </div>
+                <p class="text-[12px] sm:text-xs text-[#004619] font-medium">介護の未来を創る</p>
+            </div>
+
+            <!-- Navigation Links in Footer (ホームを黄色にハイライト) -->
+            <div class="flex flex-wrap justify-center items-center gap-x-3 sm:gap-x-4 gap-y-2.5 text-sm text-white font-medium">
+                <a href="#" class="text-[#fef263] py-1">ホーム</a>
+                <span class="opacity-30">|</span>
+                <a href="sns.html" class="hover:text-[#fef263] py-1">YouTube・SNS</a>
+                <span class="opacity-30">|</span>
+                <a href="service.html" class="hover:text-[#fef263] py-1">サービス概要</a>
+                <span class="opacity-30">|</span>
+                <a href="profile.html" class="hover:text-[#fef263] py-1">代表挨拶</a>
+                <span class="opacity-30">|</span>
+                <a href="company.html" class="hover:text-[#fef263] py-1">会社概要</a>
+                <span class="opacity-30">|</span>
+                <a href="contact.html" class="hover:text-[#fef263] py-1">お問い合わせ</a>
+                <span class="opacity-30">|</span>
+                <a href="policy.html" class="hover:text-[#fef263] py-1">プライバシーポリシー</a>
+                <span class="opacity-30">|</span>
+                <a href="tokusho.html" class="hover:text-[#fef263] py-1">特定商取引法に基づく表記</a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-[10px] sm:text-[11px] font-regular text-[#004619] pt-3">
+                &copy; 2026 株式会社APD. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE MODALS -->
+
+    <!-- Modal 1: お問い合わせ・無料相談フォーム -->
+    <div id="contactModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-3 sm:p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[92vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300">
+            <div class="p-5 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-10">
+                <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                    <span class="w-2 h-5 bg-brandOrange rounded"></span>
+                    無料相談・お問い合わせ
+                </h3>
+                <button onclick="closeModal('contactModal')" class="text-gray-400 hover:text-gray-600 transition-colors p-2">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <form onsubmit="handleFormSubmit(event)" class="p-5 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">お名前 <span class="text-red-500">※必須</span></label>
+                    <input type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="山田 太郎">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">貴社名 / 事業所名 <span class="text-red-500">※必須</span></label>
+                    <input type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="株式会社〇〇 介護ヘルプ">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">メールアドレス <span class="text-red-500">※必須</span></label>
+                    <input type="email" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="example@domain.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">ご相談内容 <span class="text-red-500">※必須</span></label>
+                    <textarea required rows="4" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="オンライン法定研修のご利用について、または経営改善のご相談など、詳細をご記入ください。"></textarea>
+                </div>
+                
+                <div class="bg-red-50 border border-red-100 p-3 rounded-lg">
+                    <p class="text-[11px] text-red-600 font-bold">【営業目的のご連絡はご遠慮ください】</p>
+                    <p class="text-[10px] text-gray-500 mt-1 leading-snug">介護事業所様および経営者様へのサービス提供を目的としているため、他社からの広告配信・営業アプローチメール等には一切返信いたしません。</p>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-brandOrange hover:bg-brandOrangeHover text-white font-bold py-3 sm:py-3.5 rounded-full shadow-lg shadow-brandOrange/20 transition-all text-sm sm:text-base min-h-[44px]">
+                        この内容で送信する（デモ）
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: サービス詳細 -->
+    <div id="serviceModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-3 sm:p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[92vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300">
+            <div class="p-5 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-10">
+                <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                    <span class="w-2 h-5 bg-brandGreen rounded"></span>
+                    提供サービス一覧
+                </h3>
+                <button onclick="closeModal('serviceModal')" class="text-gray-400 hover:text-gray-600 transition-colors p-2">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-5 space-y-5">
+                <div class="border-b border-gray-100 pb-3.5">
+                    <span class="text-[10px] font-bold text-brandGreen bg-brandGreen/10 px-2.5 py-0.5 rounded-full">研修サポート</span>
+                    <h4 class="text-sm sm:text-base font-bold text-gray-800 mt-1.5">1. オンライン法定研修サポート（1万円〜）</h4>
+                    <p class="text-xs text-gray-500 mt-1 leading-relaxed">介護事業所に義務付けられている年間法定研修を、手軽にオンライン受講可能なシステムと高品質動画でトータルサポート。受講記録も簡単に管理可能です。</p>
+                </div>
+                <div class="border-b border-gray-100 pb-3.5">
+                    <span class="text-[10px] font-bold text-brandGreen bg-brandGreen/10 px-2.5 py-0.5 rounded-full">動画・ドキュメント作成</span>
+                    <h4 class="text-sm sm:text-base font-bold text-gray-800 mt-1.5">2. 利用契約書・重要事項説明書の動画化</h4>
+                    <p class="text-xs text-gray-500 mt-1 leading-relaxed">新規ご利用者・ご家族への煩雑な重要事項説明を動画化。分かりやすい解説により、スタッフの負担を大幅に削減しつつ、丁寧な説明義務をしっかりと果たします。</p>
+                </div>
+                <div class="pb-1.5">
+                    <span class="text-[10px] font-bold text-brandGreen bg-brandGreen/10 px-2.5 py-0.5 rounded-full">経営改善・実践コンサル</span>
+                    <h4 class="text-sm sm:text-base font-bold text-gray-800 mt-1.5">3. 認知症グループホーム（GH）経営改善支援</h4>
+                    <p class="text-xs text-gray-500 mt-1 leading-relaxed">実地指導対策から現場指導、稼働率アップまで多角的にアプローチ。現場発想の実践的なノウハウで収支の健全化を無料相談から開始できます。</p>
+                </div>
+                
+                <button onclick="closeModal('serviceModal'); openModal('contactModal');" class="w-full bg-brandOrange hover:bg-brandOrangeHover text-white font-bold py-3 rounded-full text-center transition-all text-sm shadow-md min-h-[44px]">
+                    詳しく相談してみる
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification (デモメッセージ用) -->
+    <div id="toast" class="fixed bottom-4 right-4 left-4 sm:left-auto bg-gray-900 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-28 opacity-0 transition-all duration-300 z-50">
+        <i class="fa-solid fa-circle-check text-brandGreen text-xl flex-shrink-0"></i>
+        <div>
+            <p id="toastTitle" class="text-xs sm:text-sm font-bold">デモ：お問い合わせを仮受付しました</p>
+            <p id="toastDesc" class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">実際のご相談は別途メールフォーム等で対応可能です。</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('img').forEach(function(img) {
+                const src = img.getAttribute('src');
+                if (!src || src.trim() === "" || src === "#") {
+                    imageLoadError(img);
+                }
+            });
+        });
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            modal.offsetHeight;
+            modal.classList.add('opacity-100');
+            modal.querySelector('div').classList.add('scale-100');
+            modal.querySelector('div').classList.remove('scale-95');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.remove('opacity-100');
+            modal.querySelector('div').classList.add('scale-95');
+            modal.querySelector('div').classList.remove('scale-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                const allModals = document.querySelectorAll('[id$="Modal"]');
+                let anyOpen = false;
+                allModals.forEach(m => {
+                    if (!m.classList.contains('hidden') && m.id !== modalId) {
+                        anyOpen = true;
+                    }
+                });
+                if (!anyOpen) document.body.style.overflow = '';
+            }, 300);
+        }
+
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('[id$="Modal"]');
+            modals.forEach(modal => {
+                if (event.target === modal) closeModal(modal.id);
+            });
+        }
+
+        function showDemoToast(message, subtitle = "デモ環境につき実際の手続きは発生しません。") {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').innerText = message;
+            document.getElementById('toastDesc').innerText = subtitle;
+            toast.classList.remove('translate-y-28', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.add('translate-y-28', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 5000);
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            closeModal('contactModal');
+            showDemoToast("デモ：お問い合わせを仮受付しました", "送信内容の記録を模擬保存しました。");
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス概要 - 株式会社APD</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Social Icons & Service Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#1bbb86',     /* 鮮やかなミントグリーン */
+                        brandGreenLight: '#e8f8f3',/* 優しい緑の背景用 */
+                        brandOrange: '#ff8d42',    /* アクセントオレンジ */
+                        brandOrangeHover: '#e67325',
+                        brandOrangeLight: '#fff4ec',/* オレンジの背景用 */
+                        textDark: '#2d3748',       /* 柔らかい黒 */
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    }
+                }
+            }
+        };
+
+        function imageLoaded(imgElement) {
+            const src = imgElement.getAttribute('src');
+            if (!src || src.trim() === "" || src === "#") {
+                imageLoadError(imgElement);
+                return;
+            }
+            imgElement.classList.remove('hidden');
+            const placeholder = imgElement.nextElementSibling;
+            if (placeholder && placeholder.classList.contains('placeholder-fallback')) {
+                placeholder.classList.add('hidden');
+            }
+        }
+
+        function imageLoadError(imgElement) {
+            imgElement.classList.add('hidden');
+            const placeholder = imgElement.nextElementSibling;
+            if (placeholder && placeholder.classList.contains('placeholder-fallback')) {
+                placeholder.classList.remove('hidden');
+            }
+        }
+    </script>
+
+    <!-- CUSTOM RESPONSIVE CSS RULE & WAVE PATTERNS -->
+    <style>
+        @media screen and (max-width:767px){
+            br.nobr { display: contents; }
+        }
+        /* メディアクエリを用いた文字詰めと行間調整 */
+        .txt-rich {
+            font-feature-settings: 'palt';
+            letter-spacing: -0.01em;
+            line-height: 2.2;
+        }
+    </style>
+
+    <style>
+     @font-face {
+      font-family: 'Segoe Fluent Icons';
+      src: local('Segoe Fluent Icons'),
+           url('https://cdn.jsdelivr.net/gh/unoplatform/uno.fonts@master/webfonts/uno-fluentui-assets.woff2') format('woff2'),
+           url('https://cdn.jsdelivr.net/gh/unoplatform/uno.fonts@master/webfonts/uno-fluentui-assets.ttf') format('truetype');
+      font-display: swap;
+     }
+     .fluent-icon {
+      /* フォントファミリーの指定 */
+      font-family: 'Segoe Fluent Icons', sans-serif !important;
+      /* アイコンの基本スタイル */
+      font-size: 24px;
+     }
+     </style>
+</head>
+<body class="font-sans bg-white text-textDark antialiased leading-relaxed overflow-x-hidden">
+
+    <!-- HEADER (共通の美しさを完全維持) -->
+    <header class="bg-white border-b border-gray-100 py-3 px-3 md:px-8 overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-row justify-between items-center gap-1 sm:gap-2">
+            <!-- Logo & Brand Name -->
+            <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group flex-shrink-0">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-brandGreen text-white rounded-xl flex items-center justify-center font-bold shadow-md shadow-brandGreen/25 transform group-hover:rotate-3 transition-transform flex-shrink-0">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
+                </div>
+                <div class="flex-shrink-0">
+                    <h1 class="text-sm sm:text-lg md:text-2xl font-black tracking-wider text-gray-800 leading-none">株式会社APD</h1>
+                </div>
+            </a>
+            
+            <!-- Catchphrase (Right) -->
+            <div class="text-right text-xs text-gray-600 font-bold flex-shrink-1 min-w-0 max-w-[170px] sm:max-w-none">
+                <p class="text-brandGreen font-extrabold text-[9px] sm:text-xs leading-none">【介護事業者向け】</p>
+                <p class="text-[8px] sm:text-[10px] md:text-[11px] text-gray-500 font-medium mt-1 leading-tight sm:leading-snug break-all sm:break-normal">
+                    オンライン法定研修・運営指導対策・認知症GH経営支援
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION BAR (現在地としてサービス概要を黄色ハイライト) -->
+    <nav class="bg-brandGreen sticky top-0 z-40 shadow-md overflow-hidden">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-between sm:justify-center items-center py-2 sm:py-3.5 px-2 text-white text-[10px] sm:text-sm md:text-base font-bold gap-0.5 sm:gap-2 w-full max-w-full tracking-tighter sm:tracking-normal">
+                <a href="index.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">ホーム</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="sns.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">YouTube<br class="inline sm:hidden">・SNS</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="#" class="px-1 py-1 text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">サービス<br class="inline sm:hidden">概要</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="profile.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">代表<br class="inline sm:hidden">挨拶</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="company.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">会社<br class="inline sm:hidden">概要</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="contact.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">お問い<br class="inline sm:hidden">合わせ</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="w-full min-h-screen bg-white overflow-hidden pb-16">
+
+        <!-- HERO SECTION (ページタイトル) -->
+        <section class="w-full relative border-b border-emerald-100">
+            <div class="w-full bg-emerald-50 aspect-[16/6] md:aspect-[21/6] min-h-[160px] md:max-h-[350px] flex items-center justify-center relative overflow-hidden">
+                <img src="PKU4161360PAR58401_TP_V.jpg" alt="サービス概要メインビジュアル" class="absolute inset-0 w-full h-full object-cover z-0 hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                
+                <div class="placeholder-fallback absolute inset-0 bg-gradient-to-br from-teal-800 via-emerald-900 to-slate-900 flex items-center justify-center z-0 opacity-90">
+                    <svg class="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="0 0 100 100">
+                        <circle cx="20" cy="20" r="10" fill="#1bbb86" fill-opacity="0.2"/>
+                        <circle cx="80" cy="50" r="15" fill="#1bbb86" fill-opacity="0.1"/>
+                        <circle cx="50" cy="80" r="8" fill="#1bbb86" fill-opacity="0.15"/>
+                        <path d="M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z" fill="#1bbb86" fill-opacity="0.08"/>
+                    </svg>
+                </div>
+
+                <!-- Overlay content -->
+                <div class="relative z-10 text-center px-4">
+                    <h2 class="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
+                        サービス概要
+                    </h2>
+                    <p class="text-[10px] sm:text-xs md:text-sm font-bold text-white/90 tracking-[0.3em] uppercase mt-2 drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">
+                        SERVICES&SOLUTIONS
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: APDが選ばれる理由 (上部余白最適化を完全維持) -->
+        <section class="pt-6 sm:pt-10 pb-12 sm:pb-20 bg-white w-full relative overflow-hidden">
+            <!-- Background Wave SVG (調整されたSVG、top基準位置も最適値に調整) -->
+            <div class="absolute inset-x-0 bottom-0 top-[70px] z-0 pointer-events-none select-none flex flex-col justify-end">
+                <svg class="w-full h-[400px] sm:h-auto md:h-auto overflow-visible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 650" preserveAspectRatio="none">
+                    <!-- 1つ目の波-->
+                        <path d="M0 132L106.7 168.5C213.3 205 426.7 278 640 280.5C853.3 283 1066.7 215 1280 178.2C1493.3 141.3 1706.7 135.7 1813.3 132.8L1920 130L1920 651L1813.3 651C1706.7 651 1493.3 651 1280 651C1066.7 651 853.3 651 640 651C426.7 651 213.3 651 106.7 651L0 651Z" fill="#ffffff"></path>
+                    <!-- 2つ目の波-->
+                        <path d="M0 231L106.7 245.7C213.3 260.3 426.7 289.7 640 284.2C853.3 278.7 1066.7 238.3 1280 225.5C1493.3 212.7 1706.7 227.3 1813.3 234.7L1920 242L1920 651L1813.3 651C1706.7 651 1493.3 651 1280 651C1066.7 651 853.3 651 640 651C426.7 651 213.3 651 106.7 651L0 651Z" fill="#defdf2"></path>
+                    <!-- 3つ目の波-->
+                        <path d="M0 356L106.7 341.8C213.3 327.7 426.7 299.3 640 286.2C853.3 273 1066.7 275 1280 290C1493.3 305 1706.7 333 1813.3 347L1920 361L1920 651L1813.3 651C1706.7 651 1493.3 651 1280 651C1066.7 651 853.3 651 640 651C426.7 651 213.3 651 106.7 651L0 651Z" fill="#bbfbe5"></path>
+                    <!-- 4つ目の波-->
+                        <path d="M0 433L106.7 423.7C213.3 414.3 426.7 395.7 640 401C853.3 406.3 1066.7 435.7 1280 452.5C1493.3 469.3 1706.7 473.7 1813.3 475.8L1920 478L1920 651L1813.3 651C1706.7 651 1493.3 651 1280 651C1066.7 651 853.3 651 640 651C426.7 651 213.3 651 106.7 651L0 651Z" fill="#acfae0"></path>
+                    <!-- 5つ目の波-->
+                        <path d="M0 475L106.7 478.2C213.3 481.3 426.7 487.7 640 476.2C853.3 464.7 1066.7 435.3 1280 429.7C1493.3 424 1706.7 442 1813.3 451L1920 460L1920 651L1813.3 651C1706.7 651 1493.3 651 1280 651C1066.7 651 853.3 651 640 651C426.7 651 213.3 651 106.7 651L0 651Z" fill="#bbfbe5"></path>
+                    <!-- 6つ目の波-->
+                        <path d="M0 515L106.7 510C213.3 505 426.7 495 640 499.5C853.3 504 1066.7 523 1280 537C1493.3 551 1706.7 560 1813.3 564.5L1920 569L1920 651L1813.3 651C1706.7 651 1493.3 651 1280 651C1066.7 651 853.3 651 640 651C426.7 651 213.3 651 106.7 651L0 651Z" fill="#defdf2"></path>
+                    <!-- 7つ目の波-->
+                        <path d="M0 606L106.7 593C213.3 580 426.7 554 640 552.8C853.3 551.7 1066.7 575.3 1280 581.7C1493.3 588 1706.7 577 1813.3 571.5L1920 566L1920 651L1813.3 651C1706.7 651 1493.3 651 1280 651C1066.7 651 853.3 651 640 651C426.7 651 213.3 651 106.7 651L0 651Z" fill="#ffffff"></path>
+                </svg>
+                <!-- Waveの下部からセクション底面までを綺麗に満たす同色ブロック (最下層波色である #ffffff に完全連動) -->
+                <div class="bg-white h-[120px] w-full -mt-1"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+                
+                <div class="text-center mb-10">
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-gray-800 tracking-wider">
+                        APDが選ばれる理由
+                    </h3>
+                    <div class="flex justify-center items-center gap-1.5 mt-3">
+                        <div class="w-16 h-1 bg-brandGreen rounded-full"></div>
+                        <div class="w-2 h-1 bg-brandGreen/30 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Three Strengths Grid (スマホの時だけ各カードに最大幅を設定し、中央配置に整え) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Card 01 -->
+                    <div class="w-full max-w-[325px] mx-auto md:max-w-none bg-white rounded-2xl p-6 py-10 shadow-md border border-gray-[#bedfc2]/50 flex flex-col justify-start items-center text-center hover:shadow-lg transition-shadow duration-300 min-h-[380px] md:min-h-[420px]">
+                        <div class="w-full flex flex-col items-center gap-2 pb-3 mb-2">
+                            <span class="text-5xl font-black text-brandGreen tracking-wider leading-none">01</span>
+                            <i class="fa-solid fa-chart-column text-5xl text-brandGreen mt-2"></i>
+                        </div>
+                        <div class="w-full text-center space-y-2 mt-2">
+                            <div class="w-full h-px bg-gray-150 mb-4"></div>
+                            <h4 class="text-base sm:text-lg font-bold text-gray-700 leading-snug">
+                                介護特化型<br>コンサルティング
+                            </h4>
+                            <p class="text-sm sm:text-[15px] text-gray-600 leading-relaxed font-regular pt-2 txt-rich">
+                                中小規模の事業所様へ<br>専門性の高いコンサルティングを提供します。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 02 (ユーザー提供の知見電球SVG：隣の text-5xl アイコンとサイズ感が調和するよう w-[52px] h-[52px] に最適スケーリング) -->
+                    <div class="w-full max-w-[325px] mx-auto md:max-w-none bg-white rounded-2xl p-6 py-10 shadow-md border border-[#bedfc2]/50 flex flex-col justify-start items-center text-center hover:shadow-lg transition-shadow duration-300 min-h-[380px] md:min-h-[420px]">
+                        <div class="w-full flex flex-col items-center gap-2 pb-3 mb-2">
+                            <span class="text-5xl font-black text-brandGreen tracking-wider leading-none">02</span>
+                            <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" class="w-[52px] h-[52px] text-brandGreen mt-2 flex-shrink-0" style="opacity: 1;" xml:space="preserve">
+                                <g>
+                                    <path d="M465.75,336.531l-33.563-71.141c0.094-2.125,0.156-4.25,0.156-6.391c0-89.453-72.5-161.969-161.969-161.969
+                                        c-89.438,0-161.938,72.516-161.938,161.969c0,50.281,22.906,95.219,58.875,124.938v57.25c0,5.578,3.344,10.625,8.5,12.797
+                                        l134.125,56.906c4.281,1.828,9.219,1.375,13.125-1.203c3.875-2.563,6.219-6.938,6.219-11.594v-48.5
+                                        c0-7.688,6.219-13.922,13.906-13.922h68.688c7.688,0,13.938-6.234,13.938-13.922v-41.813c0-5.328,3.031-10.188,7.813-12.531
+                                        l25.625-12.422C466.094,351.656,469,343.422,465.75,336.531z M271.563,397.438c-6.969,0-13.063-3.891-16.156-9.625h32.281
+                                        C284.594,393.547,278.531,397.438,271.563,397.438z M304.25,361.781c0,2.469-1.25,4.641-3.156,5.938
+                                        c1.906,1.281,3.156,3.453,3.156,5.922c0,3.953-3.219,7.172-7.188,7.172h-51.375c-3.969,0-7.156-3.219-7.156-7.172
+                                        c0-2.469,1.25,4.641,3.125-5.922c-1.875-1.297-3.125-3.469-3.125-5.938c0-2.438,1.219-4.594,3.094-5.891
+                                        c-1.875-1.297-3.094-3.453-3.094-5.891c0-3.969,3.188-7.188,7.156-7.188h51.375c3.969,0,7.188,3.219,7.188,7.188
+                                        c0,2.438-1.219,4.594-3.094,5.891C303.031,357.188,304.25,359.344,304.25,361.781z M313.094,302.672
+                                        c-11.969,7.922-13.031,13.813-13.031,28.563h-57.344c0-14.75-1.094-20.641-13.031-28.563
+                                        c-20.531-13.547-34.063-36.813-34.063-63.234c0-41.828,33.938-75.734,75.75-75.734c41.844,0,75.75,33.906,75.75,75.734
+                                        C347.125,265.859,333.594,289.125,313.094,302.672z" fill="currentColor"></path>
+                                    <rect x="258.563" width="23.688" height="53.844" fill="currentColor"></rect>
+                                    <polygon points="178.094,75.406 157.563,87.25 130.625,40.609 151.156,28.781" fill="currentColor"></polygon>
+                                    <polygon points="98.656,146.156 86.813,166.688 40.156,139.75 52.031,119.234" fill="currentColor"></polygon>
+                                    <polygon points="65.25,247.156 65.25,270.844 11.375,270.844 11.406,247.156" fill="currentColor"></polygon>
+                                    <polygon points="488.781,119.234 500.625,139.75 454,166.656 442.156,146.141" fill="currentColor"></polygon>
+                                    <polygon points="389.625,28.781 410.156,40.625 383.219,87.25 362.719,75.391" fill="currentColor"></polygon>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="w-full text-center space-y-2 mt-2">
+                            <div class="w-full h-px bg-gray-150 mb-4"></div>
+                            <h4 class="text-base sm:text-lg font-bold text-gray-700 leading-snug">
+                                豊富な現場経験
+                            </h4>
+                            <p class="text-sm sm:text-[15px] text-gray-600 leading-relaxed font-regular pt-2 txt-rich">
+                                現場を知り尽くしているからこそ、<br>机上の空論ではない解決策を提示します。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 03 (見出し「経営効率×ケアの向上」の行間を leading-tight へとギュッと詰めて微調整) -->
+                    <div class="w-full max-w-[325px] mx-auto md:max-w-none bg-white rounded-2xl p-6 py-10 shadow-md border border-[#bedfc2]/50 flex flex-col justify-start items-center text-center hover:shadow-lg transition-shadow duration-300 min-h-[380px] md:min-h-[420px]">
+                        <div class="w-full flex flex-col items-center gap-2 pb-3 mb-2">
+                            <span class="text-5xl font-black text-brandGreen tracking-wider leading-none">03</span>
+                            <i class="fa-solid fa-hands-holding-child text-5xl text-brandGreen mt-2"></i>
+                        </div>
+                        <div class="w-full text-center space-y-1 mt-2">
+                            <div class="w-full h-px bg-gray-150 mb-4"></div>
+                            <h4 class="text-base sm:text-lg font-bold text-gray-700 leading-tight">
+                                経営効率<span class="block text-xs text-gray-700 font-bold my-0.5">×</span>ケアの向上
+                            </h4>
+                            <p class="text-sm sm:text-[15px] text-gray-600 leading-relaxed font-regular pt-2 txt-rich">
+                                2つの視点を両立した<br>「現場で本当に使える」<br>実践的サポートを行います。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ミドル会議画像エリア (波背景を途切れさせ白背景で独立) -->
+        <section class="py-6 pb-12 bg-white w-full">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <!-- Middle Meeting Photo Box -->
+                <div class="w-full bg-slate-100 rounded-2xl overflow-hidden aspect-[21/9] min-h-[120px] md:max-h-[220px] flex items-center justify-center relative border border-slate-200 shadow-sm">
+                    <img src="PKU4151341PAR58331_TP_V.jpg" alt="打ち合わせ・ミーティング風景" class="w-full h-full object-cover hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                    <div class="placeholder-fallback flex flex-col items-center text-center p-4 text-emerald-600">
+                        <div class="w-10 h-10 bg-brandGreen/10 rounded-full flex items-center justify-center mb-1">
+                            <i class="fa-solid fa-users-viewfinder text-lg"></i>
+                        </div>
+                        <p class="font-extrabold text-[10px] sm:text-xs">会議・サービス提供イメージ領域</p>
+                        <p class="text-[9px] opacity-75 mt-0.5">推奨サイズ: 1200px × 514px (21:9)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: 3大サービス詳細 -->
+        <section class="py-6 sm:py-8 bg-white w-full">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6">
+
+                <!-- SERVICE CARD 1 -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-gray-500/5 border border-[#bedfc2]/50 mb-10 space-y-6">
+                    
+                    <!-- Header with Icon, Orange Line, and Title -->
+                    <div class="flex items-center border-b border-gray-150 pb-4">
+                        <!-- ①背景削除・②アイコン大きく & Font Awesomeビデオアイコンに変更 -->
+                        <div class="w-9 text-brandOrange flex-shrink-0 flex items-center justify-center text-3xl">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <!-- ③オレンジのライン（バー） -->
+                        <span class="w-[3px] h-6 bg-brandOrange rounded-full flex-shrink-0 mx-3"></span>
+                        <h4 class="text-lg sm:text-xl md:text-2xl font-black text-gray-800 leading-tight">
+                            1.オンライン法定研修（1万円〜）
+                        </h4>
+                    </div>
+
+                    <!-- Subtitle & Content -->
+                    <div class="space-y-4">
+                        <h5 class="text-base sm:text-base md:text-lg font-bold text-gray-700 leading-snug">
+                         現場の負担を抑え、コンプライアンスとスキルアップを両立。
+                        </h5>
+                        <!-- 3項目の行頭チェックマークとテキストの間隔（gap-2.5 から gap-1.5 に微調整） -->
+                        <div class="text-base sm:text-sm md:text-base text-gray-600 font-regular txt-rich">
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-1.5 leading-relaxed">
+                                    <i class="fa-solid fa-circle-check text-brandGreen text-base mt-1 flex-shrink-0"></i>
+                                    <span><b>監査対応：</b>必須の法定研修を完全網羅</span>
+                                </li>
+                                <li class="flex items-start gap-1.5 leading-relaxed">
+                                    <i class="fa-solid fa-circle-check text-brandGreen text-base mt-1 flex-shrink-0"></i>
+                                    <span><b>コスト減：</b>研修に伴う手間・シフト調整・費用を大幅削減</span>
+                                </li>
+                                <li class="flex items-start gap-1.5 leading-relaxed">
+                                    <i class="fa-solid fa-circle-check text-brandGreen text-base mt-1 flex-shrink-0"></i>
+                                    <span><b>実践的：</b>現場経験に根ざした内容でスタッフが育つ</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Characteristics Box (【料金（税込）】の全角約物カーニングを font-feature-settings: 'palt' にて完璧に緊密補正し、下の説明文の行間も美しく最適化) -->
+                    <div class="bg-brandGreenLight/60 border border-brandGreen/20 rounded-xl p-4 sm:p-5 space-y-3">
+                        <p class="text-lg sm:text-xl md:text-xl font-bold text-brandGreen flex items-center gap-1.5" style="font-feature-settings: 'palt';">
+                            【料金<small class="font-bold text-brandGreen" style="font-size: 80%; font-feature-settings: 'palt';">（税込）</small>】
+                        </p>
+                        <!-- 料金説明文の行間が詰まらないよう、広めのパディング(py-1)と高さのある行間(space-y-3.5、leading-loose)を設定 -->
+                        <div class="text-[15px] sm:text-sm md:text-base text-gray-600 font-regular txt-rich py-1">
+                            <ul class="space-y-3.5">
+                                <li class="leading-relaxed flex items-start gap-1">
+                                    <span class="text-brandGreen font-medium flex-shrink-0">・</span>
+                                    <span><b>オンライン法定研修：</b><br class="inline sm:hidden">1事業所あたり10,000円／<small>月</small></span>
+                                </li>
+                                <li class="leading-relaxed flex items-start gap-1">
+                                    <span class="text-brandGreen font-medium flex-shrink-0">・</span>
+                                    <span><b>新入社員法定研修動画：</b>5,000円</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- PC Zoom Illustration (ご指定の軽量フラットSVGに差し替え、薄グレー枠を完全に削除) -->
+                    <div class="w-full flex items-center justify-center py-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 615.108" class="w-full max-w-[280px] sm:max-w-[300px] h-auto mx-auto" style="opacity: 1;" xml:space="preserve" role="img" artist="Katerina Limpitsouni" source="https://undraw.co/">
+                            <path d="M0,0H959.59V592.424a9.4,9.4,0,0,1-9.4,9.4H9.4a9.4,9.4,0,0,1-9.4-9.4Z" transform="translate(0.41 13.286)" fill="#e6e6e6"/>
+                            <path d="M9.4,0H895.314a9.4,9.4,0,0,1,9.4,9.4V491.727a9.4,9.4,0,0,1-9.4,9.4H9.4a9.4,9.4,0,0,1-9.4-9.4V9.4A9.4,9.4,0,0,1,9.4,0Z" transform="translate(27.849 77.626)" fill="#fff"/>
+                            <path d="M9.4,0H950.193a9.4,9.4,0,0,1,9.4,9.4V40.767H0V9.4A9.4,9.4,0,0,1,9.4,0Z" fill="#1bbb86"/>
+                            <circle cx="7.556" cy="7.556" r="7.556" transform="translate(22.739 13.286)" fill="#fff"/>
+                            <circle cx="7.556" cy="7.556" r="7.556" transform="translate(51.419 13.286)" fill="#fff"/>
+                            <circle cx="7.556" cy="7.556" r="7.556" transform="translate(80.099 13.286)" fill="#fff"/>
+                            <path d="M18.8,0H158.153a18.8,18.8,0,0,1,18.8,18.8V173.177a18.8,18.8,0,0,1-18.8,18.8H18.8A18.8,18.8,0,0,1,0,173.177V18.8A18.8,18.8,0,0,1,18.8,0Z" transform="translate(139.164 118.843)" fill="#e6e6e6"/>
+                            <path d="M18.8,0H158.153a18.8,18.8,0,0,1,18.8,18.8V173.177a18.8,18.8,0,0,1-18.8,18.8H18.8A18.8,18.8,0,0,1,0,173.177V18.8A18.8,18.8,0,0,1,18.8,0Z" transform="translate(391.729 118.843)" fill="#e6e6e6"/>
+                            <path d="M18.8,0H158.153a18.8,18.8,0,0,1,18.8,18.8V173.177a18.8,18.8,0,0,1-18.8,18.8H18.8A18.8,18.8,0,0,1,0,173.177V18.8A18.8,18.8,0,0,1,18.8,0Z" transform="translate(644.294 118.843)" fill="#e6e6e6"/>
+                            <path d="M18.8,0H158.153a18.8,18.8,0,0,1,18.8,18.8V173.177a18.8,18.8,0,0,1-18.8,18.8H18.8A18.8,18.8,0,0,1,0,173.177V18.8A18.8,18.8,0,0,1,18.8,0Z" transform="translate(139.164 345.564)" fill="#e6e6e6"/>
+                            <path d="M18.8,0H158.153a18.8,18.8,0,0,1,18.8,18.8V173.177a18.8,18.8,0,0,1-18.8,18.8H18.8A18.8,18.8,0,0,1,0,173.177V18.8A18.8,18.8,0,0,1,18.8,0Z" transform="translate(391.729 345.564)" fill="#e6e6e6"/>
+                            <path d="M18.8,0H158.153a18.8,18.8,0,0,1,18.8,18.8V173.177a18.8,18.8,0,0,1-18.8,18.8H18.8A18.8,18.8,0,0,1,0,173.177V18.8A18.8,18.8,0,0,1,18.8,0Z" transform="translate(644.294 345.564)" fill="#e6e6e6"/>
+                            <path d="M20.565,70.455c0-1.105-1.306-7.759-2.373-13.017a29.92,29.92,0,1,1,34.7-8.385,114.184,114.184,0,0,0,6.929,12.054l-5.61,16.826L38.322,80.738S20.565,72.324,20.565,70.455Z" transform="translate(179.387 177.087)" fill="#ed9da0"/>
+                            <path d="M347.333,344.655s9.5-20.576,27.7-15.828,28.49,11.871,29.281,18.993-.4,17.806-.4,17.806-1.978-14.641-14.641-11.475-32.447.791-32.447.791l-3.166,28.49s-3.561-5.144-7.518-1.978S334.67,350.986,347.333,344.655Z" transform="translate(-165.375 -163.742)" fill="#2f2e41"/>
+                            <path d="M472.259,457.131l-7.471-33.656c-3.747-11.219-13.086-20.558-13.086-20.558l-46.1-16.211h-.012A19.359,19.359,0,0,1,391.885,404.8c-14.026,4.664-23.682-11.054-23.682-11.054l-38.965,29.732S317.09,433.766,318.03,453.4l-1.292,10.925H475.854Z" transform="translate(-169.492 -153.505)" fill="#1bbb86"/>
+                            <ellipse cx="40.599" cy="43.097" rx="40.599" ry="43.097" transform="translate(419.187 163.635)" fill="#2f2e41"/>
+                            <circle cx="21.358" cy="21.358" r="21.358" transform="translate(474.449 229.234)" fill="#2f2e41"/>
+                            <path d="M28.347,67.838l-7.582-17.18A25.54,25.54,0,1,1,49.512,34.45L59.876,61.4l-28.982,12.2Z" transform="translate(432.497 190.334)" fill="#9f616a"/>
+                            <path d="M564.605,374.934c16.061-10.717,20.862-13.279,39.272-9.139l1.1-26.857-47.573,9.98Z" transform="translate(-127.442 -161.851)" fill="#2f2e41"/>
+                            <path d="M668.585,425.414l-.7.082a.45.45,0,0,0-.059-.071c-2.8-2.8-16.141-7.882-26.091-11.407h-.012c-6.32-2.244-11.266-3.853-11.266-3.853L618.424,397.8c-3.031,3.407-9.433,6.038-15.518,7.894a121.862,121.862,0,0,1-14.191,3.383H588.7l-2.49,7.953s-28.229,21.368-30.507,23.647h-.012v.023a1.241,1.241,0,0,0-.211.893v.059a103.579,103.579,0,0,0-2.185,20.734H676.22V455.17C676.22,445.255,668.585,425.414,668.585,425.414Z" transform="translate(-128.16 -151.567)" fill="#d6d6e3"/>
+                            <path d="M856.352,473.127h-60.78l-3.348-33.021-.2-2.009-.411-3.982-1.68-16.646-2.1,17.879-4.44,37.779H772.348l.411-11.759.411-11.923.176-4.8,2.267-65.361a46.669,46.669,0,0,1,9.315-28.769,36.349,36.349,0,0,1,29.356-14.2,37.4,37.4,0,0,1,29.862,14.719,47.3,47.3,0,0,1,9.762,29.2l1.046,39.565Z" transform="translate(-89.887 -162.311)" fill="#2f2e41"/>
+                            <path d="M3.82,89.75s1.909-2.863,9.548-10.5c5.586-5.589,3-20.89,1.207-28.7a26.737,26.737,0,1,1,28.437-2.607c-2.33,17.965,20.962,24.62,20.962,24.62L25.78,119.347Z" transform="translate(697.664 186.89)" fill="#ed9da0"/>
+                            <path d="M678.946,266.119H656.392l-.376-3.865-.341-3.571,10.385-1.3,12.522-1.562.141,4.006Z" transform="translate(114.56 44.697)" fill="#fbbebe"/>
+                            <path d="M886.639,454.223s-3.819-23.87-6.684-33.418-5.729-9.548-5.729-9.548h0v0c-3.371-3.371-11.477-3.971-17.574-3.877-4.276.047-7.565.423-7.565.423l-34.055,35.923-17.151-22.8v-.012a24.956,24.956,0,0,0-4.57.787,30.262,30.262,0,0,0-3.783,1.234,51.9,51.9,0,0,0-14.484,9.292h-.012c-2.467,2.22-3.924,3.853-3.924,3.853a111.832,111.832,0,0,0-8.481,24.634H871.759l.247-4.91v-.009Z" transform="translate(-91.586 -149.894)" fill="#1bbb86"/>
+                            <path d="M789.942,369.932c17.267-9.309,24.359-8.915,45.83,0l5.729-13.957a9.924,9.924,0,0,0-9.913-9.913H793.171a9.924,9.924,0,0,0-9.913,9.913Z" transform="translate(-87.981 -160.606)" fill="#2f2e41"/>
+                            <path d="M387.078,521.914a7.043,7.043,0,0,0-4.085.912,10.656,10.656,0,0,0-2.763,3.647A43.623,43.623,0,0,1,368.347,539.9c-3.531,2.587-8.02,5.812-7.416,10.582a14.305,14.305,0,0,0,1.721,4.467c3.257,6.576,12.146,11.657,11.272,19.16,3.236-5.418-1.092-8.1,2.144-13.515,1.541-2.58,4.219-5.493,6.546-3.872.779.542,1.291,1.516,2.1,1.992,1.936,1.136,4-1.036,5.709-2.574,5.909-5.3,14.311-3.914,21.664-2.262,3.471.78,7.284,1.8,9.336,5.121,2.7,4.362-2.563,9.073-3.893,14a2.687,2.687,0,0,0,2.884,3.344c2.206-.218,4.82-.4,4.95-1.364,2.776.1,6.177-.216,7.366-3.106a12.154,12.154,0,0,0,.57-3.535c.436-4.855,2.5-9.284,3.862-13.905s1.959-10.036-.345-14.133a16.354,16.354,0,0,0-3.018-3.668C420.728,523.982,403.54,521.9,387.078,521.914Z" transform="translate(-161.78 -129.885)" fill="#2f2e41"/>
+                            <path d="M12.5,100.933S-7.4,68.71,3.02,66.814c6.89-1.252,7.985-12.023,7.935-19.185a28.428,28.428,0,1,1,33.388,6.388c-1.422,12.6,4.169,14.692,4.169,14.692l11.373,37.91Z" transform="translate(204.383 412.471)" fill="#9f616a"/>
+                            <path d="M350.9,653.9c5.028-19.771,11.97-46.4,11.97-46.4s2.7.552,6.954,1.175a164.579,164.579,0,0,0,18.749,1.7c8.035.223,16.493-.305,23.036-2.573a21.574,21.574,0,0,0,6.8-3.63,13.11,13.11,0,0,0,2.279-2.361c11.371-15.166,16.105,42.642,16.105,42.642l.881,9.445Z" transform="translate(-163.523 -116.364)" fill="#1bbb86"/>
+                            <path d="M428.4,697.922q-.564,0-1.128.035l.54-1.01C428,697.264,428.184,697.593,428.4,697.922Z" transform="translate(-150.18 -99.299)" fill="#ffb8b8"/>
+                            <path d="M387.532,528.246a6.452,6.452,0,0,0-3.325.645,7.752,7.752,0,0,0-2.249,2.577,32.745,32.745,0,0,1-9.674,9.488c-2.874,1.828-6.529,4.108-6.037,7.479a9.352,9.352,0,0,0,1.4,3.157,24.834,24.834,0,0,1,3.018,15.478l7.9-11.488c1.255-1.824,3.434-3.882,5.328-2.737.634.383,1.051,1.071,1.711,1.408,1.576.8,3.252-.732,4.647-1.819,4.81-3.749,11.65-2.767,17.635-1.6,2.826.551,5.929,1.275,7.6,3.62,2.776,3.9-.123,9.527,1.5,14.029a4.136,4.136,0,0,0,1.711-2.731c2.26.07,5.028-.152,6-2.2a7.564,7.564,0,0,0,.464-2.5c.355-3.432,2.033-6.562,3.144-9.828s1.594-7.094-.281-9.989a12.088,12.088,0,0,0-2.457-2.593C414.925,529.707,400.933,528.233,387.532,528.246Z" transform="translate(-160.849 -128.778)" fill="#2f2e41"/>
+                            <path d="M393.437,610.262c-6.484-7.412-10.338-18.22-10.514-18.7v-.012s-10.338-5.921-13.18-.235-29.38,19.9-32.223,19.9a.381.381,0,0,1-.07.024c-1.128.376-15.248,5.509-18.878,24.622A143.041,143.041,0,0,0,317,655.724h77.285c.8-8.376,1.4-16.211,1.633-22.978.341-9.433.012-16.763-1.421-20.546a5.985,5.985,0,0,0-1.057-1.938Z" transform="translate(-169.447 -118.187)" fill="#2f2e41"/>
+                            <path d="M445,614.917c-.047-.223-.082-.411-.117-.587a4.371,4.371,0,0,0-.634-1.41.09.09,0,0,1-.012-.035c-5.474-8.481-40.681-20.158-40.681-20.158l-1.316,4.546s.164,4.487.4,11.677c.235,6.731.517,15.824.787,25.809.188,6.52.352,13.427.505,20.287h52.663A307.535,307.535,0,0,0,445,614.917Z" transform="translate(-154.553 -117.509)" fill="#2f2e41"/>
+                            <path d="M858.078,648.941l4.029-19.688,3.747-1.586.024.012c.341.129,4.417,1.856,4.417,8.4,0,1.316-.2,6.05-.529,12.863Z" transform="translate(-74.909 -111.404)" fill="#575a89"/>
+                            <path d="M8.179,83.168l4.3-24.735a32.722,32.722,0,1,1,40.364.092l-2.4,49.184Z" transform="translate(708.125 403.324)" fill="#ed9da0"/>
+                            <path d="M667.3,443.074l-2.772,23.776h-22.19l-24.082-46.272-6.79-13.028-3.254-2.126,3.771-.858,2.972,2.15,33.256,24.094,5.333-16.011.141-.411,1.339-4.029Z" transform="translate(106.268 70.686)" fill="#d6d6e3"/>
+                            <path d="M807.472,534.619s4.09-20.452,27.269-16.361l-2.727,1.363s21.815-2.727,19.088,9.544c0,0,17.725,10.908,13.634,23.179a138.746,138.746,0,0,0-5.454,21.815l-4.09-4.09S851.1,542.8,826.56,545.527c-18.406,2.045-25.905,10.737-27.823,17a55.345,55.345,0,0,1-3.369,8.569l-1.531.336S785.657,541.436,807.472,534.619Z" transform="translate(-86.395 -130.614)" fill="#2f2e41"/>
+                            <path d="M884.1,634.524l-.024-.012L866.7,618.372v-10.9L853.288,596.9l-.2,6.426L851.7,647.011l-22.308-30.684-15.036-20.675-2.7-3.7.658-3.465-8.329,9.433-30.143,22.613-2.584,1.938a82.224,82.224,0,0,0-8.176,9.539c-.811,1.21-4.5,10.843-9.3,23.776H887.99c.329-6.813.529-11.547.529-12.863C888.518,636.38,884.442,634.653,884.1,634.524Z" transform="translate(-93.132 -118.249)" fill="#2f2e41"/>
+                            <path d="M603.852,528.783h0c-22.174,0-40.149,19.949-40.149,44.557V604.6h9.616l5.567-11.584L577.493,604.6H639.3l5.061-10.531L643.095,604.6h6.959V580.056C650.053,551.739,629.368,528.783,603.852,528.783Z" transform="translate(-126.342 -128.681)" fill="#2f2e41"/>
+                            <path d="M574.22,649.933H548.106l-.247-21.3c-.012-.223-.012-.435-.012-.658l5.228-5.885.094-.106,19.958,12.64Z" transform="translate(-129.112 -112.396)" fill="#d0cde1"/>
+                            <path d="M16.768,93.749c2.838-3.405-1.087-28.364-3.276-40.89a28.587,28.587,0,1,1,34.612-3.4c-.473,16.338,9.061,35.908,9.061,35.908s-31.943,9.364-39.183,9.362C16.705,94.726,16.2,94.435,16.768,93.749Z" transform="translate(445.375 414.392)" fill="#ed9da0"/>
+                            <path d="M664.264,606.432h-.012a6.561,6.561,0,0,0-3.277-3.2c-5.6-2.361-10.432-4.17-14.4-5.545a30.456,30.456,0,0,0-21.544.669c-.669.27-1.327.564-1.974.893,0,0-27.947,5.322-31.271,4.652-.247-.047-.505-.082-.752-.106a13.178,13.178,0,0,0-1.515-.129,33.482,33.482,0,0,0-18.561,4.6c-9.174,5.322-22.778,14.755-23.06,23.941l-.258.294.258,21.956H670.56c.247-21.039.388-36.851.388-37.92C670.948,613.222,664.264,606.432,664.264,606.432Z" transform="translate(-129.149 -116.929)" fill="#1bbb86"/>
+                            <path d="M614.278,540.492a21.057,21.057,0,0,0-16.614-8.478h-.788c-15.2,0-27.518,13.752-27.518,30.717h5.092l.822-6.26,1.206,6.26h30.2l2.53-5.3-.633,5.3h5.942q4.159,20.655-11.952,41.309H612.69l5.061-10.592-1.265,10.592h19.294l3.8-24.362C639.576,561.433,628.975,545.962,614.278,540.492Z" transform="translate(-125.354 -128.116)" fill="#2f2e41"/>
+                            <circle cx="15.038" cy="15.038" r="15.038" transform="translate(479.433 384.866)" fill="#2f2e41"/>
+                        </svg>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-2 text-center">
+                        <button onclick="openModal('contactModal')" class="inline-flex items-center justify-center bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-sm sm:text-base px-10 py-3 rounded-full shadow-lg shadow-brandOrange/35 hover:shadow-brandOrange/50 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[44px]">
+                            詳しくみる
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- SERVICE CARD 2 -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-gray-500/5 border border-[#bedfc2]/50 mb-10 space-y-6">
+                    
+                    <!-- Header with Icon, Orange Line, and Title -->
+                    <!-- ① 2行目頭文字「説」が1行目「利」の縦軸とピッタリ綺麗に揃うよう、ネガティブマージンやインデント調整を適用 -->
+                    <!-- ユーザー提供の新型ビデオ再生機能付きカチンコSVGを美しく挿入 -->
+                    <div class="flex items-start border-b border-gray-150 pb-4">
+                        <!-- ①背景削除・②アイコン大きく(新型SVG・カラー指定: brandOrange) -->
+                        <div class="w-9 h-9 text-brandOrange flex-shrink-0 flex items-center justify-center mt-[2px]">
+                            <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" class="w-8 h-8 flex-shrink-0" style="opacity: 1;" xml:space="preserve">
+                                <g>
+                                    <path d="M484.516,19.531l-48.297,69.797l47.984,69.344h-54.266l-47.969-69.344l49.813-72h-68.625l-49.813,72
+                                        l47.969,69.344h-54.25l-47.969-69.344l49.797-72H240.25l-49.813,72l47.984,69.344h-54.266l-47.969-69.344l49.813-72h-68.625
+                                        l-49.813,72l47.969,69.344h-54.25L13.313,89.328l49.813-72H40c-22.094,0-40,17.906-40,40v397.344c0,22.094,17.906,40,40,40h432
+                                        c22.094,0,40-17.906,40-40V57.328C512,39.625,500.438,24.797,484.516,19.531z M480,454.672c0,4.422-3.594,8-8,8H40
+                                        c-4.406,0-8-3.578-8-8v-264h448V454.672z" fill="#ff8d42"></path>
+                                    <path d="M215.688,393.156c0.75,0.438,1.672,0.406,2.406-0.031l101.75-60.719c0.719-0.438,1.156-1.219,1.156-2.063
+                                        c0-0.813-0.438-1.609-1.156-2.031l-101.75-60.734c-0.734-0.422-1.656-0.453-2.406-0.031c-0.719,0.422-1.188,1.234-1.188,2.078
+                                        v60.719v60.734C214.5,391.953,214.969,392.75,215.688,393.156z" fill="#ff8d42"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <!-- ③アイコンと見出しの間にオレンジのライン（バー） -->
+                        <span class="w-[3px] h-8 bg-brandOrange rounded-full flex-shrink-0 mx-3 mt-1.5"></span>
+                        <h4 class="text-lg sm:text-xl md:text-2xl font-black text-gray-800 leading-tight">
+                            <span class="inline-block">2.利用契約・重要事項説明書</span><br>
+                            <span class="inline-block pl-[1.125rem] sm:pl-[1.25rem]">説明動画製作</span>
+                        </h4>
+                    </div>
+
+                    <!-- Subtitle & Content -->
+                    <div class="space-y-4">
+                        <h5 class="text-base sm:text-base md:text-lg font-bold text-gray-700 leading-snug">
+                         契約時の説明を動画化。業務効率を劇的に向上！
+                        </h5>
+                        <!-- ② 小見出し下の3項目の行頭チェックマークとテキストの間隔（gap-2.5 から gap-1.5 に微調整） -->
+                        <div class="text-base sm:text-sm md:text-base text-gray-600 font-regular txt-rich">
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-1.5 leading-relaxed">
+                                    <i class="fa-solid fa-circle-check text-brandGreen text-base mt-1 flex-shrink-0"></i>
+                                    <span><b>契約時間を75%削減：</b>動画に任せて業務時間を大幅カット</span>
+                                </li>
+                                <li class="flex items-start gap-1.5 leading-relaxed">
+                                    <i class="fa-solid fa-circle-check text-brandGreen text-base mt-1 flex-shrink-0"></i>
+                                    <span><b>管理職の負担軽減：</b>同じ内容の繰り返しによる疲労を解消</span>
+                                </li>
+                                <li class="flex items-start gap-1.5 leading-relaxed">
+                                    <i class="fa-solid fa-circle-check text-brandGreen text-base mt-1 flex-shrink-0"></i>
+                                    <span><b>トラブル防止：</b>説明のムラをなくし「言った・言わない」を防止</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Characteristics Box -->
+                    <!-- ③ 【料金】説明文の行間を、上部の【料金】欄(py-1、space-y-3.5、leading-loose)に完璧に同期。ただし、行頭マーク(・)は排除 -->
+                    <div class="bg-brandGreenLight/60 border border-brandGreen/20 rounded-xl p-4 sm:p-5 space-y-3">
+                        <p class="text-lg sm:text-xl md:text-xl font-bold text-brandGreen flex items-center gap-1.5" style="font-feature-settings: 'palt';">
+                            【料金<small class="font-bold text-brandGreen" style="font-size: 80%; font-feature-settings: 'palt';">（税込）</small>】
+                        </p>
+                        <div class="text-[15px] sm:text-sm md:text-base text-gray-600 font-medium txt-rich py-1">
+                            <ul class="space-y-3.5">
+                                <li class="leading-loose">
+                                    <strong>1事業所あたり…</strong><br>製作料（初回のみ）：30,000円＋管理料：月額980円
+                                </li>
+                                <li class="leading-loose text-xs sm:text-xs md:text-sm text-gray-500 font-light">
+                                    ※有料老人ホーム、サービス付き高齢者向け住宅の場合は、別途お見積りとなります。
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Document Reproduction Placeholder -->
+                    <div class="w-full flex items-center justify-center py-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 726.677" class="w-full max-w-[280px] sm:max-w-[300px] h-auto mx-auto" style="opacity: 1;" xml:space="preserve" role="img" artist="Katerina Limpitsouni" source="https://undraw.co/">
+                            <g transform="translate(-626.574 -267.202)">
+                                <rect width="255.627" height="171.745" rx="9.61" transform="translate(814.208 315.422)" fill="#d6d6e3"/>
+                                <rect width="244.33" height="147.558" transform="translate(819.582 328.225)" fill="#fff"/>
+                                <ellipse cx="2.152" cy="2.327" rx="2.152" ry="2.327" transform="translate(939.196 320.186)" fill="#fff"/>
+                                <rect width="44.79" height="47.278" transform="translate(918.954 480.946)" fill="#d6d6e3"/>
+                                <path d="M463.3,326.95h54.743a7.465,7.465,0,0,1,7.465,7.465H455.84A7.465,7.465,0,0,1,463.3,326.95Z" transform="translate(451.916 197.542)" fill="#d6d6e3"/>
+                                <rect width="184.137" height="63.453" transform="translate(630.307 564.305)" fill="#f2f2f2"/>
+                                <rect width="39.813" height="345.879" transform="translate(1386.761 531.957)" fill="#f2f2f2"/>
+                                <rect width="184.137" height="3.733" transform="translate(630.307 564.305)" fill="#e6e6e6"/>
+                                <rect width="184.137" height="63.453" transform="translate(630.307 625.27)" fill="#f2f2f2"/>
+                                <ellipse cx="9.5" cy="10" rx="9.5" ry="10" transform="translate(712.574 647.61)" fill="#d6d6e3"/>
+                                <circle cx="9.5" cy="9.5" r="9.5" transform="translate(712.574 583.61)" fill="#d6d6e3"/>
+                                <rect width="184.137" height="63.453" transform="translate(630.307 688.722)" fill="#f2f2f2"/>
+                                <ellipse cx="9.5" cy="10" rx="9.5" ry="10" transform="translate(712.574 709.61)" fill="#d6d6e3"/>
+                                <rect width="184.137" height="63.453" transform="translate(630.307 752.175)" fill="#f2f2f2"/>
+                                <circle cx="9.5" cy="9.5" r="9.5" transform="translate(712.574 773.61)" fill="#d6d6e3"/>
+                                <rect width="184.137" height="63.453" transform="translate(630.307 815.628)" fill="#f2f2f2"/>
+                                <ellipse cx="9.5" cy="10" rx="9.5" ry="10" transform="translate(712.574 836.61)" fill="#d6d6e3"/>
+                                <rect width="184.137" height="4.977" transform="translate(630.307 684.99)" fill="#e6e6e6"/>
+                                <rect width="184.137" height="4.977" transform="translate(630.307 622.781)" fill="#e6e6e6"/>
+                                <rect width="184.137" height="4.977" transform="translate(630.307 748.442)" fill="#e6e6e6"/>
+                                <rect width="184.137" height="4.977" transform="translate(630.307 811.895)" fill="#e6e6e6"/>
+                                <rect width="800" height="37.325" transform="translate(626.574 528.225)" fill="#f2f2f2"/>
+                                <rect width="114.463" height="120.97" transform="translate(825.641 345.183)" fill="#e6e6e6"/>
+                                <rect width="109.487" height="115.708" transform="translate(828.129 347.82)" fill="#fff"/>
+                                <rect width="42.364" height="31.963" transform="translate(861.921 381.898)" fill="#090814"/>
+                                <path d="M499.969,301.075l-16.348,23.042-17.157-1.481s-22.3,1.481-7.465-15.614c7.141-8.212,9.481-15.054,9.953-19.907a15.465,15.465,0,0,0-1.058-8.3l18.588-2.227a13.86,13.86,0,0,0-.3,7.751C488.6,293.971,499.969,301.075,499.969,301.075Z" transform="translate(405.809 114.266)" fill="#ed9da0"/>
+                                <circle cx="18.588" cy="18.588" r="18.588" transform="translate(862.282 364.417)" fill="#ed9da0"/>
+                                <path d="M477.646,315.187s6.694-8.174,6.694-14.868a15.03,15.03,0,0,1,8.921-7.465c6.694-2.227,5.947,0,5.947,0l4.454,17.841-1.481,31.963.747,3.732H447.91l3.732-14.868-.747-12.641,2.974-19.322,8.921-5.2,6.694,8.921Z" transform="translate(404.344 117.996)" fill="#1bbb86"/>
+                                <path d="M470.138,292.09,447.1,295.822s-3.733-.746-8.174,17.095A253.813,253.813,0,0,0,433,346.348h28.74s1.729-29.736,6.221-31.963l6.221-9.617s-9.953-.784-8.485-5.984S470.138,292.09,470.138,292.09Z" transform="translate(400.704 118.051)" fill="#1bbb86"/>
+                                <path d="M485,290.3l24.523,11.894s2.974.746,1.48,12.641l1.481,31.963H486.057a95.31,95.31,0,0,0,1.12-30.47A203.68,203.68,0,0,1,485,290.3Z" transform="translate(413.401 117.614)" fill="#1bbb86"/>
+                                <path d="M472.527,267.492c-.323,3.011-2.389,5.487-4.106,7.988s-3.21,5.586-2.252,8.46c.373,1.12,1.107,2.115,1.369,3.272.448,1.991-.56,4.044-.386,6.072.236,2.787,2.6,4.852,3.907,7.316,2.762,5.213.647,11.67-2.339,16.746s-6.893,9.891-7.876,15.7c-.908,5.375.834,10.812,2.712,15.925a4.977,4.977,0,0,1,.423,3.2c-.572,1.717-2.725,2.227-4.541,2.351a47.88,47.88,0,0,1-5.96,0,4.976,4.976,0,0,1-2.177-.46c-1.369-.746-1.779-2.488-2.289-3.932s-1.63-3.086-3.185-2.924c-1.02.112-1.816.983-2.824,1.157a2.912,2.912,0,0,1-2.488-1.02c-1.854-2-1.406-5.238-.187-7.677s3.086-4.566,3.894-7.166c2-6.47-3.011-12.877-4.068-19.571a6.32,6.32,0,0,1,.174-3.285c.908-2.314,3.658-3.173,5.624-4.69,4.019-3.123,4.516-8.908,4.84-13.984a182.45,182.45,0,0,1,2.015-18.215,32.883,32.883,0,0,1,3.285-10.886,36.841,36.841,0,0,1,5.848-7.2c3.061-3.185,6.221-6.445,10.352-8.087a19.658,19.658,0,0,1,14.358.411,38.009,38.009,0,0,1,12.056,8.274A28.541,28.541,0,0,1,506.17,265.7c1.829,5.039,1.244,10.588,1.8,15.925a39.553,39.553,0,0,0,3.347,12.442c1.953,4.28,4.7,8.373,5.126,13.064.336,3.732-.883,7.465-1.505,11.135-1.095,6.432-.435,13.014.211,19.5a15.69,15.69,0,0,0,.946,4.616,16.413,16.413,0,0,0,4.429,5.313,1.9,1.9,0,0,1,.784,1.244,1.506,1.506,0,0,1-.585,1.095c-2.252,2-6.146.523-8.585,2.3a13.8,13.8,0,0,0-1.854,1.966,8.361,8.361,0,0,1-14.32-3.882c-.635-2.911.311-5.9.672-8.858,1.12-9.344-3.658-18.227-7.465-26.824-1.792-4.019-3.422-8.373-2.762-12.728.535-3.5,2.488-6.569,3.919-9.8,2.874-6.457,3.733-14.022,1.244-20.653A20.467,20.467,0,0,0,481.05,260.09c-1.767-.8-4.28-1.891-6.134-.821C471.843,261.072,472.776,264.718,472.527,267.492Z" transform="translate(402.234 106.655)" fill="#090814"/>
+                                <path d="M1.866,0H87.714a1.866,1.866,0,0,1,0,3.733H1.866A1.866,1.866,0,0,1,1.866,0Z" transform="translate(963.744 352.797)" fill="#e8eaf1"/>
+                                <path d="M1.866,0H87.714a1.866,1.866,0,0,1,0,3.733H1.866A1.866,1.866,0,0,1,1.866,0Z" transform="translate(963.744 362.75)" fill="#e8eaf1"/>
+                                <path d="M1.866,0H87.714a1.866,1.866,0,0,1,0,3.733H1.866A1.866,1.866,0,0,1,1.866,0Z" transform="translate(963.744 372.704)" fill="#e8eaf1"/>
+                                <path d="M1.866,0H87.714a1.866,1.866,0,0,1,0,3.733H1.866A1.866,1.866,0,0,1,1.866,0Z" transform="translate(963.744 382.657)" fill="#e8eaf1"/>
+                                <path d="M1.866,0H87.714a1.866,1.866,0,0,1,0,3.733H1.866A1.866,1.866,0,0,1,1.866,0Z" transform="translate(963.744 392.61)" fill="#e8eaf1"/>
+                                <path d="M1.866,0H87.714a1.866,1.866,0,0,1,0,3.733H1.866A1.866,1.866,0,0,1,1.866,0Z" transform="translate(963.744 402.564)" fill="#e8eaf1"/>
+                                <rect width="89.58" height="3.733" transform="translate(963.744 412.517)" fill="#e8eaf1"/>
+                                <rect width="89.58" height="3.733" transform="translate(963.744 422.47)" fill="#e8eaf1"/>
+                                <path d="M1.866,0H87.714a1.866,1.866,0,0,1,0,3.733H1.866A1.866,1.866,0,0,1,1.866,0Z" transform="translate(963.744 432.424)" fill="#e8eaf1"/>
+                                <path d="M1.866,0H87.714a1.866,1.866,0,0,1,0,3.733H1.866A1.866,1.866,0,0,1,1.866,0Z" transform="translate(963.744 442.377)" fill="#e8eaf1"/>
+                                <path d="M1.866,0H87.714a1.866,1.866,0,0,1,0,3.733H1.866A1.866,1.866,0,0,1,1.866,0Z" transform="translate(963.744 452.33)" fill="#e8eaf1"/>
+                                <path d="M750.837,655.934l-4.977,32.348L716,682.062s6.221-21.151,7.465-26.128,1.244,0,1.244,0Z" transform="translate(469.803 206.35)" fill="#ed9da0"/>
+                                <path d="M642.837,682.062l-29.86,6.221-3.446-22.4L608,655.934h26.128s0-4.977,1.244,0c.448,1.792,1.543,5.7,2.774,9.953C640.348,673.427,642.837,682.062,642.837,682.062Z" transform="translate(443.433 206.35)" fill="#ed9da0"/>
+                                <path d="M638.166,665.887H609.55l-1.53-9.953h26.128s0-4.977,1.244,0C635.84,657.726,636.934,661.632,638.166,665.887Z" transform="translate(443.438 206.35)" opacity="0.1"/>
+                                <path d="M719.79,665.387h28.616l1.53-9.953H723.784s0-4.977-1.244,0C722.117,657.226,721.022,661.132,719.79,665.387Z" transform="translate(470.729 206.228)" opacity="0.1"/>
+                                <path d="M774.325,340.5s16.174,1.244,19.907,59.72a475.512,475.512,0,0,0,8.473,65.319,92.742,92.742,0,0,1-4.977,53.7L781.79,558.229s-29.86-24.883-39.813-23.639c0,0,17.418-23.639,16.174-37.325S737,385.29,737,385.29Z" transform="translate(474.931 129.871)" fill="#1bbb86"/>
+                                <path d="M627.3,489.5s-38.569,23.639-47.278,33.592-4.977,49.767,0,65.941S616.106,703.5,616.106,703.5h31.1s-9.953-60.964-6.221-65.941-7.465-93.313-7.465-93.313Z" transform="translate(435.327 166.252)" fill="#d6d6e3"/>
+                                <path d="M738.907,489.5s38.569,23.639,47.278,33.592,4.977,49.767,0,65.941S750.1,703.5,750.1,703.5H719s9.953-60.964,6.221-65.941,7.465-93.313,7.465-93.313Z" transform="translate(470.536 166.252)" fill="#d6d6e3"/>
+                                <path d="M673.829,238.236s0,48.523-17.418,73.406,79.627,3.732,79.627,3.732a25.842,25.842,0,0,1-9.331-13.064c-5.126-18.252-7.067-50.4.622-64.075C738.526,218.33,673.829,238.236,673.829,238.236Z" transform="translate(454.743 102.741)" fill="#ed9da0"/>
+                                <path d="M743.785,587.238c-44.5,1.966-118.532,10.252-129.754-2.041-18.1-19.819-11.683-37.661-2.339-48.523,3.658-4.267,6.943-11.409,9.6-18.538.9-2.414,1.729-4.815,2.488-7.1,2.874-8.871,12.442-14.992,23.266-14.992h89.866c10.887,0,20.467,6.221,23.291,15.092a39.922,39.922,0,0,0,5.723,11.633,28.169,28.169,0,0,0,4.591,4.977c4.529,3.845,7.465,12.131,9.369,21.25C783.909,568.3,766.889,586.217,743.785,587.238Z" transform="translate(442.093 167.849)" fill="#d6d6e3"/>
+                                <path d="M634.222,675.516c-3.894-.784-14.059-3.023-18-6.022a1.978,1.978,0,0,0-2.986.834l-6.1,14.2s-24.883-11.2-26.128,14.93c-.722,15.241,7.017,20.74,13.6,22.681a51.182,51.182,0,0,1,16.261,7.8c5.984,4.454,15.1,9.02,25.456,6.557a24.266,24.266,0,0,1,6.383-.622c4.641.149,12.641-1.244,11.757-12.8,0,0-7.465-29.86-4.977-34.837,1.568-3.135,1.157-11.2.647-16.747a1.381,1.381,0,0,0-2.488-.635,10.949,10.949,0,0,1-9.593,4.977A17.42,17.42,0,0,1,634.222,675.516Z" transform="translate(436.832 210.108)" opacity="0.1"/>
+                                <path d="M634.222,676.516c-3.894-.784-14.059-3.023-18-6.022a1.978,1.978,0,0,0-2.986.834l-6.1,14.2s-24.883-11.2-26.128,14.93c-.722,15.241,7.017,20.74,13.6,22.681a51.183,51.183,0,0,1,16.261,7.8c5.984,4.454,15.1,9.02,25.456,6.557a24.268,24.268,0,0,1,6.383-.622c4.641.149,12.641-1.244,11.757-12.8,0,0-7.465-29.86-4.977-34.837,1.568-3.135,1.157-11.2.647-16.747a1.381,1.381,0,0,0-2.488-.634,10.948,10.948,0,0,1-9.593,4.977,17.409,17.409,0,0,1-3.832-.311Z" transform="translate(436.832 210.353)" fill="#090814"/>
+                                <path d="M732.236,675.516c3.894-.784,14.059-3.023,18-6.022a1.978,1.978,0,0,1,2.986.834l6.059,14.2s24.883-11.2,26.128,14.93c.722,15.241-7.017,20.74-13.6,22.681a51.183,51.183,0,0,0-16.174,7.826c-5.984,4.454-15.1,9.02-25.456,6.557a24.257,24.257,0,0,0-6.383-.622c-4.641.149-12.641-1.244-11.757-12.8,0,0,7.465-29.86,4.977-34.837-1.568-3.135-1.157-11.2-.647-16.747a1.381,1.381,0,0,1,2.488-.635,10.949,10.949,0,0,0,9.593,4.977A17.417,17.417,0,0,0,732.236,675.516Z" transform="translate(468.821 210.108)" opacity="0.1"/>
+                                <path d="M732.236,676.516c3.894-.784,14.059-3.023,18-6.022a1.978,1.978,0,0,1,2.986.834l6.059,14.2s24.883-11.2,26.128,14.93c.722,15.241-7.017,20.74-13.6,22.681a51.183,51.183,0,0,0-16.174,7.826c-5.984,4.454-15.1,9.02-25.456,6.557a24.267,24.267,0,0,0-6.383-.622c-4.641.149-12.641-1.244-11.757-12.8,0,0,7.465-29.86,4.977-34.837-1.568-3.135-1.157-11.2-.647-16.747a1.381,1.381,0,0,1,2.488-.635,10.949,10.949,0,0,0,9.593,4.977,17.413,17.413,0,0,0,3.782-.336Z" transform="translate(468.821 210.353)" fill="#090814"/>
+                                <path d="M556.528,269.635s11.2-36.081-18.663-41.058-22.4,38.569,0,54.743S556.528,269.635,556.528,269.635Z" transform="translate(421.5 102.447)" fill="#ed9da0"/>
+                                <path d="M707.663,270.434H700.2s-4.977,22.4-21.151,22.4c-4.317,0-10.215-.261-16.56-.659a166.618,166.618,0,0,0-56.46,6.756c-6.308,1.829-13.238,1.991-19.048-2.364-14.93-11.2-31.1-41.058-31.1-41.058s-28.616-1.244-29.86,14.93S539.7,316.469,543.433,320.2s3.732,27.372,29.86,33.593,44.79,8.709,46.034,39.813,26.128,63.453,13.686,99.533,1.244,43.546,1.244,43.546,116.952,64.7,151.789,7.465c0,0-13.686-38.569,0-57.232s7.465-64.7,7.465-64.7l44.79-44.79s1.244-28.616-17.418-43.546-62.208-38.569-62.208-38.569l4.355-18.488Z" transform="translate(423.397 109.112)" fill="#1bbb86"/>
+                                <rect width="20.802" height="23.776" transform="translate(1132.503 950.544)" fill="#e6e6e6"/>
+                                <rect width="34.177" height="145.63" transform="translate(1128.036 784.125)" fill="#e6e6e6"/>
+                                <path d="M702.574,632.994c92.068,3.592,95.1-35.882,95.1-35.882l-5.947-109.455c-1.48-170.469-89.157-145.35-89.157-145.35s-87.677-25.063-89.157,145.35L607.47,597.112S610.444,636.586,702.574,632.994Z" transform="translate(445.543 115.058)" fill="#090814"/>
+                                <path d="M571.73,755.173s-14.868-11.882,124.865-49.033h28.23s120.323,29.686,121.8,49.033H828.8s-65.381-19.347-95.1-19.347-118.88,2.974-145.568,19.322Z" transform="translate(434.465 219.148)" fill="#e6e6e6"/>
+                                <g transform="translate(998.033 637.001)">
+                                    <rect width="16.348" height="120.361" transform="translate(11.882 17.842)" fill="#090814"/>
+                                    <rect width="38.631" height="4.454" transform="translate(11.882 136.71)" fill="#090814"/>
+                                    <path d="M542.774,419.77h6.283a16.174,16.174,0,0,1,16.174,16.174v7.6H526.6v-7.6a16.174,16.174,0,0,1,16.174-16.174Z" transform="translate(-526.6 -419.77)" fill="#090814"/>
+                                </g>
+                                <g transform="translate(1238.755 637.001)">
+                                    <rect width="16.348" height="120.361" transform="translate(26.75 17.842)" fill="#090814"/>
+                                    <rect width="43.017" height="4.454" transform="translate(0 136.71)" fill="#090814"/>
+                                    <path d="M748.174,419.77h6.283a16.174,16.174,0,0,1,16.174,16.174v7.6H732v-7.6a16.174,16.174,0,0,1,16.174-16.174Z" transform="translate(-717.17 -419.77)" fill="#090814"/>
+                                </g>
+                                <circle cx="10.401" cy="10.401" r="10.401" transform="translate(1003.222 973.077)" fill="#d6d6e3"/>
+                                <circle cx="10.401" cy="10.401" r="10.401" transform="translate(1132.503 973.077)" fill="#d6d6e3"/>
+                                <circle cx="10.401" cy="10.401" r="10.401" transform="translate(1263.265 973.077)" fill="#d6d6e3"/>
+                                <path d="M705.058,603.235h99.533l7.465-14.855c4.454-25.257-11.882-26.75-11.882-26.75H609.953s-16.348,1.481-11.882,26.75l7.465,14.855Z" transform="translate(443.06 180.891)" fill="#090814"/>
+                                <ellipse cx="41.222" cy="41.222" rx="41.222" ry="41.222" transform="translate(1114.683 284.532)" fill="#ed9da0"/>
+                                <path d="M892.718,382.167a7.71,7.71,0,0,0-4.939-6.855,23.216,23.216,0,0,0-5.869-1.12c-5.855-.728-11.869-2.8-15.273-7.121-4.537-5.749-3.3-13.791-6.933-20.033A69.845,69.845,0,0,0,854.165,340c-6.339-8.205-7.466-18.683-8.04-28.643a11.915,11.915,0,0,1,.7-5.99,23.166,23.166,0,0,1,3.918-4.673,15.208,15.208,0,0,0,3.886-10.359c-.185-7.719,11.236-12.905,19.338-15.572s16.872-3.091,25.5-3.2c4.958-.065,10.074-.008,14.631,1.741a33.933,33.933,0,0,1,7.336,4.219c9.55,6.756,18.515,15.061,21.724,25.571a53.526,53.526,0,0,1,1.741,14.685,9.319,9.319,0,0,1-.68,4.52c-1.146,2.227-3.849,3.432-5.594,5.32-3.263,3.527-2.676,8.631-3.1,13.195a30.17,30.17,0,0,1-15.363,22.859,19.628,19.628,0,0,0-4.8,3.209,20.213,20.213,0,0,0-2.649,4.471C909.27,377.725,900.614,381.942,892.718,382.167Z" transform="translate(266.986 -4.343)" fill="#090814"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-2 text-center">
+                        <button onclick="openModal('contactModal')" class="inline-flex items-center justify-center bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-sm sm:text-base px-10 py-3 rounded-full shadow-lg shadow-brandOrange/35 hover:shadow-brandOrange/50 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[44px]">
+                            詳しくみる
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- SERVICE CARD 3 -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-gray-500/5 border border-[#bedfc2]/50 mb-6 space-y-6">
+                    
+                    <!-- Header with Icon, Orange Line, and Title -->
+                    <div class="flex items-center border-b border-gray-150 pb-4">
+                        <!-- ①背景削除・②アイコン大きく -->
+                        <div class="w-9 text-brandOrange text-3xl flex-shrink-0 flex items-center justify-center">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                        <!-- ③オレンジのライン（バー） -->
+                        <span class="w-[3px] h-6 bg-brandOrange rounded-full flex-shrink-0 mx-3"></span>
+                        <h4 class="text-lg sm:text-xl md:text-2xl font-black text-gray-800 leading-tight">
+                            3.認知症GH経営改善支援
+                        </h4>
+                    </div>
+
+                    <!-- Subtitle & Content -->
+                    <div class="space-y-4">
+                        <h5 class="text-sm sm:text-base md:text-lg font-bold text-gray-700 leading-snug">
+                            経営と現場の視点でホームの再生と成長をサポートします。
+                        </h5>
+                        <!-- 3つの箇条書き項目すべてについて行頭チェックマークとテキストの間隔（gap-2.5 から gap-1.5 に微調整） -->
+                        <div class="text-base sm:text-sm md:text-base text-gray-600 font-regular txt-rich">
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-1.5 leading-relaxed">
+                                    <i class="fa-solid fa-circle-check text-brandGreen mt-1 flex-shrink-0"></i>
+                                    <span><b>収益向上：</b>稼働率UPと加算取得の支援</span>
+                                </li>
+                                <li class="flex items-start gap-1.5 leading-relaxed">
+                                    <i class="fa-solid fa-circle-check text-brandGreen mt-1 flex-shrink-0"></i>
+                                    <span><b>現場DX：</b>ICT活用による業務効率化</span>
+                                </li>
+                                <li class="flex items-start gap-1.5 leading-relaxed">
+                                    <i class="fa-solid fa-circle-check text-brandGreen mt-1 flex-shrink-0"></i>
+                                    <span><b>定着率UP：</b>負担軽減で長く働ける環境作り</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Characteristics Box -->
+                    <div class="bg-brandGreenLight/60 border border-brandGreen/20 rounded-xl p-4 sm:p-5 space-y-1">
+                        <p class="text-lg sm:text-xl md:text-xl font-bold text-brandGreen flex items-center gap-1.5" style="font-feature-settings: 'palt';">
+                            【料金】
+                        </p>
+                        <div class="text-[15px] sm:text-sm md:text-base text-gray-600 font-medium txt-rich py-1">
+                            <ul class="space-y-3.5">
+                                <li class="leading-loose">
+                                    詳細はお問い合わせ後、ヒアリングの上でお見積りいたします。
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Blackboard / Lecture Placeholder -->
+                    <div class="w-full flex items-center justify-center py-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[325px] sm:max-w-[350px] h-auto mx-auto" viewBox="0 0 960 654.477" style="opacity: 1;" xml:space="preserve" role="img" artist="Katerina Limpitsouni" source="https://undraw.co/">
+                        <g transform="translate(-545.961 -298)">
+                        <path d="M794.655,692.743H613.368c-.263,0-.476-.614-.476-1.372s.213-1.372.476-1.372H794.655c.263,0,.476.614.476,1.372S794.918,692.743,794.655,692.743Z" transform="translate(710.83 251.513)" fill="#e6e6e6"/>
+                        <path d="M896.189,798.893s-12.939,10.9-19.748,10.215-19.749-.681-14.3,6.81,27.92,11.577,37.454,12.258,30.644,1.362,29.282-2.724-2.724-23.154-8.172-24.516S896.189,798.893,896.189,798.893Z" transform="translate(492.324 123.786)" fill="#090814"/>
+                        <path d="M896.189,798.893s-12.939,10.9-19.748,10.215-19.749-.681-14.3,6.81,27.92,11.577,37.454,12.258,30.644,1.362,29.282-2.724-2.724-23.154-8.172-24.516S896.189,798.893,896.189,798.893Z" transform="translate(541.506 123.786)" fill="#090814"/>
+                        <path d="M884.956,494.994l-.032,243.263c-.026,1.525,0,3.99,0,3.99s-4.464,1.52-5.983,1.382h-24.9a5.487,5.487,0,0,1-4.974-5.04l-10.28-155.41a1.372,1.372,0,0,0-2.738.054L833.6,733.708c-.112,2.948,3.5,8.538.554,8.539l-34.389-2.163c-2.9,0-1.372-1.8-1.549-4.7L783.447,493.622l87.792-21.948Z" transform="translate(582.116 188.021)" fill="#2f2e41"/>
+                        <path d="M21.405,65.072a33.694,33.694,0,1,1,29.186-2.226l3.761,19.7L21.405,86.125Z" transform="translate(1369.701 403.443)" fill="#ed9da0"/>
+                        <path d="M875.266,577H209.281a23.346,23.346,0,0,1-23.32-23.32V231.32A23.346,23.346,0,0,1,209.281,208H875.266a23.346,23.346,0,0,1,23.32,23.32V553.681A23.346,23.346,0,0,1,875.266,577ZM209.281,210.743A20.6,20.6,0,0,0,188.7,231.32V553.681a20.6,20.6,0,0,0,20.576,20.576H875.266a20.6,20.6,0,0,0,20.576-20.576V231.32a20.6,20.6,0,0,0-20.576-20.576Z" transform="translate(360 90)" fill="#3f3d56"/>
+                        <circle cx="12.346" cy="12.346" r="12.346" transform="translate(661.531 353.556)" fill="#ccc"/>
+                        <circle cx="12.346" cy="12.346" r="12.346" transform="translate(661.531 400.196)" fill="#ccc"/>
+                        <circle cx="12.346" cy="12.346" r="12.346" transform="translate(661.531 446.835)" fill="#ccc"/>
+                        <circle cx="12.346" cy="12.346" r="12.346" transform="translate(661.531 493.474)" fill="#ccc"/>
+                        <circle cx="12.346" cy="12.346" r="12.346" transform="translate(869.351 586.754)" fill="#ccc"/>
+                        <circle cx="12.346" cy="12.346" r="12.346" transform="translate(780.188 586.754)" fill="#ccc"/>
+                        <circle cx="12.346" cy="12.346" r="12.346" transform="translate(1053.166 586.754)" fill="#ccc"/>
+                        <circle cx="12.346" cy="12.346" r="12.346" transform="translate(959.887 586.754)" fill="#ccc"/>
+                        <path d="M730.621,259.243H324.583a1.372,1.372,0,0,1,0-2.744H730.621a1.372,1.372,0,0,1,0,2.744Z" transform="translate(411.022 108.03)" fill="#ccc"/>
+                        <path d="M730.621,293.243H324.583a1.372,1.372,0,0,1,0-2.743H730.621a1.372,1.372,0,0,1,0,2.743Z" transform="translate(411.022 120.669)" fill="#ccc"/>
+                        <path d="M730.621,327.244H324.583a1.372,1.372,0,0,1,0-2.744H730.621a1.372,1.372,0,0,1,0,2.744Z" transform="translate(411.022 133.309)" fill="#ccc"/>
+                        <path d="M730.621,361.243H324.583a1.372,1.372,0,0,1,0-2.743H730.621a1.372,1.372,0,0,1,0,2.743Z" transform="translate(411.022 145.949)" fill="#ccc"/>
+                        <path d="M392.85,408.255H353.07a6.867,6.867,0,0,1-6.859-6.859V364.359a6.867,6.867,0,0,1,6.859-6.859H392.85a6.867,6.867,0,0,1,6.859,6.859V401.4a6.867,6.867,0,0,1-6.859,6.859Z" transform="translate(419.573 145.577)" fill="#1bbb86"/>
+                        <path d="M457.85,420.894H418.07a6.867,6.867,0,0,1-6.859-6.859V330.359a6.867,6.867,0,0,1,6.859-6.859H457.85a6.867,6.867,0,0,1,6.859,6.859v83.677a6.867,6.867,0,0,1-6.859,6.859Z" transform="translate(443.737 132.937)" fill="#1bbb86"/>
+                        <path d="M523.85,433.534H484.07a6.867,6.867,0,0,1-6.859-6.859V296.359a6.867,6.867,0,0,1,6.859-6.859H523.85a6.867,6.867,0,0,1,6.859,6.859V426.675a6.867,6.867,0,0,1-6.859,6.859Z" transform="translate(468.273 120.298)" fill="#1bbb86"/>
+                        <path d="M591.85,445.8H552.07a6.867,6.867,0,0,1-6.859-6.859V263.359a6.867,6.867,0,0,1,6.859-6.859H591.85a6.867,6.867,0,0,1,6.859,6.859V438.943a6.867,6.867,0,0,1-6.859,6.859Z" transform="translate(493.552 108.03)" fill="#1bbb86"/>
+                        <path d="M689.443,394.706a13,13,0,0,1-2.514-.252h0q-.227-.045-.454-.1L504.609,352.012c-1.975-.46-3.288-1.7-3.052-2.891a1.975,1.975,0,0,1,1.514-1.4,5.508,5.508,0,0,1,2.69-.06l183,38.217c4.12.86,6.981,3.389,6.512,5.756-.245,1.239-1.337,2.2-3.073,2.705A9.915,9.915,0,0,1,689.443,394.706Z" transform="translate(577.013 162.498)" fill="#3f3d56"/>
+                        <path d="M704.568,410.657a13.794,13.794,0,0,0,19.924-7.1L773.5,404.58l-13.577-21.553-44.458,2.334a13.869,13.869,0,0,0-10.9,25.3Z" transform="translate(550.22 155.067)" fill="#ed9da0"/>
+                        <path d="M718.28,412.267l-.255-15.022A6.206,6.206,0,0,1,723.6,391l88.068-8.5,73.375-24.058a17.583,17.583,0,1,1,10.471,33.572L814.3,416.056l-89.694,2.278a6.157,6.157,0,0,1-6.327-6.067Z" transform="translate(557.795 145.628)" fill="#3f3d56"/>
+                        <path d="M782.38,553.563a6.131,6.131,0,0,1-1.872-4.341l-2.273-162.474a39.1,39.1,0,0,1,26.45-37.643c3.156-14.32,19.956-16.114,29.75-15.9a15.206,15.206,0,0,1,12.315,6.753l7.02,10.531,15.474,9.07a39.134,39.134,0,0,1,18.478,42.272l-2.382,10.836A249.029,249.029,0,0,0,887.669,528.8l4.794,18.278a6.172,6.172,0,0,1-6.445,7.72l-5.567-.429a6.164,6.164,0,0,1-5.669-5.539l-.921-9.214a.686.686,0,0,0-1.365,0l-.892,8.92a6.172,6.172,0,0,1-6.047,5.558l-78.781,1.212h-.1A6.134,6.134,0,0,1,782.38,553.563Z" transform="translate(580.177 136.539)" fill="#3f3d56"/>
+                        <path d="M820.212,323.6c.121,4.17,3.016,6.582,6.57,8.766s4.291,4.241,8.361,5.155a3.6,3.6,0,0,0,5.291-3.152l7.151-15.31a89.886,89.886,0,0,0,2.874-13.856c.9-9.019-1.238-18.72-7.533-25.241s-17.211-8.837-24.755-3.813c-8.952-11.433-49.87,13.827-39.776,21.778,1.8,1.414,4.541-.375,6.82-.549s4.833.227,6.281,2c1.892,2.311,1.068,5.753,1.847,8.636a8.064,8.064,0,0,0,10.189,5.222,27.73,27.73,0,0,0,5.284-3.4c1.748-1.164,3.957-2.025,5.925-1.29,2.594.968,3.516,4.144,3.75,6.9a63.915,63.915,0,0,0,1.72,8.152Z" transform="translate(588.757 126.964)" fill="#2f2e41"/>
+                        <path d="M630.544,173l-5.487,67.216L596.25,310.175l42.524-68.588Z" transform="translate(767.618 362.313)" opacity="0.2"/>
+                        <path d="M783.431,518.041a13.794,13.794,0,0,0,.436-21.147l18.352-45.454-24.969,5.042-13.6,42.391a13.869,13.869,0,0,0,19.781,19.168Z" transform="translate(573.701 180.499)" fill="#ed9da0"/>
+                        <path d="M781.261,537.285l-14.134-5.094a6.205,6.205,0,0,1-3.862-7.434l23.316-85.349,3.555-77.137a17.583,17.583,0,1,1,35.1,2.128l-6.351,84.463-29.709,84.662a6.156,6.156,0,0,1-7.918,3.761Z" transform="translate(574.535 141.208)" fill="#3f3d56"/>
+                        <path d="M730.621,395.243H324.583a1.372,1.372,0,0,1,0-2.743H730.621a1.372,1.372,0,0,1,0,2.743Z" transform="translate(411.022 158.588)" fill="#3f3d56"/>
+                        </g>
+                        </svg>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-2 text-center">
+                        <button onclick="openModal('contactModal')" class="inline-flex items-center justify-center bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-sm sm:text-base px-10 py-3 rounded-full shadow-lg shadow-brandOrange/35 hover:shadow-brandOrange/50 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[44px]">
+                            詳しくみる
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: サービス導入までの流れ + お問い合わせ (波の上で完結) -->
+        <section class="py-12 sm:py-16 bg-white w-full relative overflow-hidden">
+            
+            <!-- Double Wave Background Wrapper (新しく明るく調色されたお問い合せ用背景SVGに差し替え) -->
+            <div class="absolute inset-x-0 bottom-0 w-full h-[550px] z-0 pointer-events-none select-none flex flex-col justify-end">
+                <svg class="relative w-full h-auto min-h-[120px] md:min-h-[180px] z-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" preserveAspectRatio="none">
+                    <!-- 明るく調整された波 path パターンに完璧差し替え -->
+                    <g transform="translate(0, -35)">
+                        <path d="M0 179L32 181.2C64 183.3 128 187.7 192 207.2C256 226.7 320 261.3 384 264.8C448 268.3 512 240.7 576 225.8C640 211 704 209 768 206.2C832 203.3 896 199.7 928 197.8L960 196L960 541L928 541C896 541 832 541 768 541C704 541 640 541 576 541C512 541 448 541 384 541C320 541 256 541 192 541C128 541 64 541 32 541L0 541Z" fill="#e8f8f3"></path>
+                    </g>
+                    <g transform="translate(0, -10)">
+                        <path d="M0 342L32 340.8C64 339.7 128 337.3 192 327.7C256 318 320 301 384 289.3C448 277.7 512 271.3 576 279.5C640 287.7 704 310.3 768 324.2C832 338 896 343 928 345.5L960 348L960 541L928 541C896 541 832 541 768 541C704 541 640 541 576 541C512 541 448 541 384 541C320 541 256 541 192 541C128 541 64 541 32 541L0 541Z" fill="#d5f6ec"></path>
+                    </g>
+                    <g transform="translate(0, 15)">
+                        <path d="M0 415L32 400.8C64 386.7 128 358.3 192 343C256 327.7 320 325.3 384 328.2C448 331 512 339 576 357.3C640 375.7 704 404.3 768 398.7C832 393 896 353 928 333L960 313L960 541L928 541C896 541 832 541 768 541C704 541 640 541 576 541C512 541 448 541 384 541C320 541 256 541 192 541C128 541 64 541 32 541L0 541Z" fill="#c2f4e4"></path>
+                    </g>
+                    <g transform="translate(0, 40)">
+                        <path d="M0 490L32 476.7C64 463.3 128 436.7 192 428.3C256 420 320 430 384 442.8C448 455.7 512 471.3 576 469.7C640 468 704 449 768 434C832 419 896 408 928 402.5L960 397L960 541L928 541C896 541 832 541 768 541C704 541 640 541 576 541C512 541 448 541 384 541C320 541 256 541 192 541C128 541 64 541 32 541L0 541Z" fill="#aef1dc"></path>
+                    </g>
+                </svg>
+                <!-- Waveの下端を埋める同色の塗りつぶしブロック (新しい最下層カラー `#aef1dc` に完全連動させて隙間を排除) -->
+                <div class="bg-[#aef1dc] h-[220px] w-full -mt-1 relative z-20"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-30">
+                
+                <div class="text-center mb-10">
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-gray-800 tracking-wider">
+                        サービス導入までの流れ
+                    </h3>
+                    <p class="text-sm sm:text-base md:text-[16px] text-gray-600 font-medium txt-rich mt-3">
+                        開始までは、以下の5つのステップでスムーズに進みます。
+                    </p>
+                    <div class="flex justify-center items-center gap-1.5 mt-3">
+                        <div class="w-16 h-1 bg-brandGreen rounded-full"></div>
+                        <div class="w-2 h-1 bg-brandGreen/30 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Consultation Fallback Image Placeholder -->
+                <div class="mb-10 w-full bg-white rounded-2xl overflow-hidden aspect-[21/9] min-h-[120px] md:max-h-[220px] flex items-center justify-center relative border border-slate-200 shadow-sm">
+                    <img src="PK4131310PAR58128_TP_V.jpg" alt="面談・コンサルティング風景イメージ" class="w-full h-full object-cover hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                    <div class="placeholder-fallback flex flex-col items-center text-center p-4 text-emerald-600">
+                        <div class="w-10 h-10 bg-brandGreen/10 rounded-full flex items-center justify-center mb-1">
+                            <i class="fa-regular fa-handshake text-lg"></i>
+                        </div>
+                        <p class="font-extrabold text-[10px] sm:text-xs">面談・ご相談イメージ領域</p>
+                        <p class="text-[9px] opacity-75 mt-0.5">推奨サイズ: 1200px × 514px (21:9)</p>
+                    </div>
+                </div>
+
+                <!-- PC Layout: Clean 2-Row Step Flow (Row 1: Step 1-3, Row 2: Step 4-5) -->
+                <div class="hidden lg:flex flex-col gap-6 max-w-4xl mx-auto mb-10">
+                    <!-- Row 1 (Step 1 -> 2 -> 3) -->
+                    <div class="flex items-center justify-between gap-3">
+                        <!-- Step 1 (説明文あり) -->
+                        <div class="flex-1 bg-white rounded-2xl p-5 min-h-[220px] shadow-sm border border-[#bedfc2]/50 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
+                            <!-- アイコンを3連カード並みの特大サイズに拡大し、ご指定の「吹き出しアイコン」に完璧に固定 -->
+                            <div class="w-14 h-14 bg-brandGreenLight text-brandGreen rounded-full flex items-center justify-center mb-3 shadow-inner">
+                                <i class="fa-solid fa-comment-dots text-3xl"></i>
+                            </div>
+                            <!-- STEPを小さく、数字を大きく二回り強調した可変比率デザイン -->
+                            <div class="flex items-baseline gap-0.5 text-brandGreen font-black tracking-wider leading-none">
+                                <span class="text-xs uppercase">STEP</span>
+                                <span class="text-3xl leading-none">1</span>
+                            </div>
+                            <h5 class="text-sm font-bold text-gray-800 mt-2">お問い合わせ</h5>
+                            <p class="text-[11px] text-gray-500 font-medium mt-2 leading-relaxed txt-rich">
+                             まずは無料相談・サンプル動画をご覧ください。
+                            </p>
+                        </div>
+                        <!-- Arrow (不透明度100%のbrandGreen) -->
+                        <div class="text-brandGreen text-xl flex-shrink-0">
+                         <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <!-- Step 2 (説明文なし) -->
+                        <div class="flex-1 bg-white rounded-2xl p-5 min-h-[220px] shadow-sm border border-[#bedfc2]/50 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
+                            <div class="w-14 h-14 bg-brandGreenLight text-brandGreen rounded-full flex items-center justify-center mb-3 shadow-inner">
+                                <i class="fa-solid fa-file-pen text-3xl"></i>
+                            </div>
+                            <div class="flex items-baseline gap-0.5 text-brandGreen font-black tracking-wider leading-none">
+                                <span class="text-xs uppercase">STEP</span>
+                                <span class="text-3xl leading-none">2</span>
+                            </div>
+                            <h5 class="text-sm font-bold text-gray-800 mt-2">無料オンライン面談<br>・ヒアリング</h5>
+                        </div>
+                        <!-- Arrow (不透明度100%のbrandGreen) -->
+                        <div class="text-brandGreen text-xl flex-shrink-0">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <!-- Step 3 (説明文なし) -->
+                        <div class="flex-1 bg-white rounded-2xl p-5 min-h-[220px] shadow-sm border border-[#bedfc2]/50 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
+                            <div class="w-14 h-14 bg-brandGreenLight text-brandGreen rounded-full flex items-center justify-center mb-3 shadow-inner">
+                                <i class="fa-solid fa-hand-holding-heart text-3xl"></i>
+                            </div>
+                            <div class="flex items-baseline gap-0.5 text-brandGreen font-black tracking-wider leading-none">
+                                <span class="text-xs uppercase">STEP</span>
+                                <span class="text-3xl leading-none">3</span>
+                            </div>
+                            <h5 class="text-sm font-bold text-gray-800 mt-2">ご提案・お見積り</h5>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 (Step 4 -> 5 Center Row) -->
+                    <div class="flex items-center justify-center gap-4 max-w-2xl mx-auto w-full">
+                        <!-- Step 4 (説明文なし) -->
+                        <div class="w-[240px] bg-white rounded-2xl p-5 min-h-[220px] shadow-sm border border-[#bedfc2]/50 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
+                            <div class="w-14 h-14 bg-brandGreenLight text-brandGreen rounded-full flex items-center justify-center mb-3 shadow-inner">
+                                <i class="fa-solid fa-handshake text-3xl"></i>
+                            </div>
+                            <div class="flex items-baseline gap-0.5 text-brandGreen font-black tracking-wider leading-none">
+                                <span class="text-xs uppercase">STEP</span>
+                                <span class="text-3xl leading-none">4</span>
+                            </div>
+                            <h5 class="text-sm font-bold text-gray-800 mt-2">ご契約</h5>
+                        </div>
+                        <!-- Arrow (不透明度100%のbrandGreen) -->
+                        <div class="text-brandGreen text-xl flex-shrink-0">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <!-- Step 5 (特別仕様・説明文なし) -->
+                        <div class="w-[240px] bg-gradient-to-br from-brandOrange to-orange-400 text-white rounded-2xl p-5 min-h-[220px] shadow-md border border-orange-300 flex flex-col items-center justify-center text-center transform scale-100 hover:scale-105 duration-300 shadow-brandOrange/25">
+                            <div class="w-14 h-14 bg-white/20 text-white rounded-full flex items-center justify-center mb-3 shadow-inner">
+                                <i class="fa-solid fa-rocket text-3xl"></i>
+                            </div>
+                            <div class="flex items-baseline gap-0.5 text-white/95 font-black tracking-wider leading-none">
+                                <span class="text-xs uppercase">STEP</span>
+                                <span class="text-3xl leading-none">5</span>
+                            </div>
+                            <h5 class="text-sm font-bold text-white mt-2">サービス開始</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Layout: Clean Vertical Flow Stack (スマホ表示でも3連カード同様の美しい max-w-[325px] に統一制限して最適化) -->
+                <div class="lg:hidden flex flex-col items-stretch gap-3 mb-10">
+                    <!-- Step 1 (説明文あり・スマホ専用幅を適用) -->
+                    <div class="w-full max-w-[325px] mx-auto bg-white rounded-2xl p-5 shadow-sm border border-[#bedfc2]/50 flex flex-col items-center text-center">
+                        <div class="w-14 h-14 bg-brandGreenLight text-brandGreen rounded-full flex items-center justify-center mb-3 shadow-inner">
+                            <i class="fa-solid fa-comment-dots text-3xl"></i>
+                        </div>
+                        <div class="flex items-baseline gap-0.5 text-brandGreen font-black tracking-wider leading-none">
+                            <span class="text-xs uppercase">STEP</span>
+                            <span class="text-3xl leading-none">1</span>
+                        </div>
+                        <h5 class="text-sm font-bold text-gray-700 mt-2">お問い合わせ</h5>
+                        <p class="text-[11px] text-gray-500 font-regular mt-2 leading-relaxed txt-rich">
+                         まずは無料相談・<br class="inline sm:hidden">サンプル動画をご覧ください。
+                        </p>
+                    </div>
+                    <!-- Arrow (不透明度100%のbrandGreen) -->
+                    <div class="flex items-center justify-center text-brandGreen py-1 text-lg">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <!-- Step 2 (説明文なし・スマホ専用幅を適用) -->
+                    <div class="w-full max-w-[325px] mx-auto bg-white rounded-2xl p-5 shadow-sm border border-[#bedfc2]/50 flex flex-col items-center text-center">
+                        <div class="w-14 h-14 bg-brandGreenLight text-brandGreen rounded-full flex items-center justify-center mb-3 shadow-inner">
+                            <i class="fa-solid fa-file-pen text-3xl"></i>
+                        </div>
+                        <div class="flex items-baseline gap-0.5 text-brandGreen font-black tracking-wider leading-none">
+                            <span class="text-xs uppercase">STEP</span>
+                            <span class="text-3xl leading-none">2</span>
+                        </div>
+                        <h5 class="text-sm font-bold text-gray-700 mt-2">無料オンライン面談<br class="inline sm:hidden">・ヒアリング</h5>
+                    </div>
+                    <!-- Arrow (不透明度100%のbrandGreen) -->
+                    <div class="flex items-center justify-center text-brandGreen py-1 text-lg">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <!-- Step 3 (説明文なし・スマホ専用幅を適用) -->
+                    <div class="w-full max-w-[325px] mx-auto bg-white rounded-2xl p-5 shadow-sm border border-[#bedfc2]/50 flex flex-col items-center text-center">
+                        <div class="w-14 h-14 bg-brandGreenLight text-brandGreen rounded-full flex items-center justify-center mb-3 shadow-inner">
+                            <i class="fa-solid fa-hand-holding-heart text-3xl"></i>
+                        </div>
+                        <div class="flex items-baseline gap-0.5 text-brandGreen font-black tracking-wider leading-none">
+                            <span class="text-xs uppercase">STEP</span>
+                            <span class="text-3xl leading-none">3</span>
+                        </div>
+                        <h5 class="text-sm font-bold text-gray-700 mt-2">ご提案・お見積り</h5>
+                    </div>
+                    <!-- Arrow (不透明度100% of brandGreen) -->
+                    <div class="flex items-center justify-center text-brandGreen py-1 text-lg">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <!-- Step 4 (説明文なし・スマホ専用幅を適用) -->
+                    <div class="w-full max-w-[325px] mx-auto bg-white rounded-2xl p-5 shadow-sm border border-[#bedfc2]/50 flex flex-col items-center text-center">
+                        <div class="w-14 h-14 bg-brandGreenLight text-brandGreen rounded-full flex items-center justify-center mb-3 shadow-inner">
+                            <i class="fa-solid fa-handshake text-3xl"></i>
+                        </div>
+                        <div class="flex items-baseline gap-0.5 text-brandGreen font-black tracking-wider leading-none">
+                            <span class="text-xs uppercase">STEP</span>
+                            <span class="text-3xl leading-none">4</span>
+                        </div>
+                        <h5 class="text-sm font-bold text-gray-700 mt-2">ご契約</h5>
+                    </div>
+                    <!-- Arrow (不透明度100% of brandGreen) -->
+                    <div class="flex items-center justify-center text-brandGreen py-1 text-lg">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <!-- Step 5 (説明文なし・スマホ専用幅を適用) -->
+                    <div class="w-full max-w-[325px] mx-auto bg-gradient-to-br from-brandOrange to-orange-400 text-white rounded-2xl p-5 shadow-md border border-orange-300 flex flex-col items-center text-center shadow-brandOrange/25">
+                        <div class="w-14 h-14 bg-white/20 text-white rounded-full flex items-center justify-center mb-3 shadow-inner">
+                            <i class="fa-solid fa-rocket text-3xl"></i>
+                        </div>
+                        <div class="flex items-baseline gap-0.5 text-white/95 font-black tracking-wider leading-none">
+                            <span class="text-xs uppercase">STEP</span>
+                            <span class="text-3xl leading-none">5</span>
+                        </div>
+                        <h5 class="text-sm sm:text-base font-bold text-white mt-2">サービス開始</h5>
+                    </div>
+                </div>
+
+                <!-- Bottom Direct Consultation CTA Button (波の上で一番目立たせる) -->
+                <div class="pt-6 text-center">
+                    <a href="contact.html" class="inline-flex items-center justify-center bg-brandGreen hover:bg-emerald-400 text-white font-extrabold text-base sm:text-lg px-12 py-4 rounded-full shadow-lg shadow-brandGreen/25 hover:shadow-brandGreen/40 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-sm min-h-[50px]">
+                        <i class="fa-solid fa-paper-plane mr-2 text-lg"></i> お問い合わせ
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: 下部遷移リンクナビゲーション (波背景と明確に切り離したすっきり薄グレーエリア) -->
+        <section class="py-12 bg-white w-full">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <!-- TRANSITION NAVIGATION BUTTONS (共通デザインを美しく配置) -->
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="sns.html" class="inline-flex items-center justify-center bg-[#ff8d42] hover:bg-[#e67325] text-white font-bold text-lg px-8 py-3.5 rounded-full shadow-lg shadow-brandOrange/35 hover:shadow-brandOrange/50 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[48px] text-center">
+                        <i class="fa-brands fa-youtube mr-2 text-lg"></i> YouTube・SNSへ
+                    </a>
+                    <a href="profile.html" class="inline-flex items-center justify-center bg-[#ff8d42] hover:bg-[#e67325] text-white font-bold text-lg px-8 py-3.5 rounded-full shadow-lg shadow-brandOrange/35 hover:shadow-brandOrange/50 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[48px] text-center">
+                        <i class="fa-solid fa-user-tie mr-2 text-lg"></i> 代表挨拶へ
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandGreen text-white py-10 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <!-- Social Accounts -->
+            <div class="space-y-4">
+                <h4 class="text-base sm:text-lg font-bold tracking-wider">公式SNSアカウント</h4>
+                <div class="flex justify-center items-center gap-5 sm:gap-6 text-2xl sm:text-3xl md:text-4xl">
+                    <a href="https://www.instagram.com/kaigo_no_hidechannel/" target="_blank" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" onclick="return false;" title="Facebook（URL確認中）" aria-disabled="true" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" onclick="return false;" title="TikTok（URL確認中）" aria-disabled="true" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <!-- Threads Inline SVG -->
+                    <a href="https://www.threads.com/@kaigo_no_hidechannel?xmt=AQG0LuBmjoE1n0MAFNwBetNoZ9_e8P_bYN0vwNJ0SV557wQ" target="_blank" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2 flex items-center justify-center" title="Threads">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-threads w-[1em] h-[1em]" viewBox="0 0 16 16">
+                            <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com/@HIDEKING-APD?sub_confirmation=1" target="_blank" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand / Logo bottom -->
+            <div class="space-y-2 pt-4 border-t border-white/20">
+                <div class="flex justify-center items-center gap-2">
+                    <div class="w-7 h-7 bg-white text-brandGreen rounded flex items-center justify-center font-bold text-sm flex-shrink-0">
+                        A
+                    </div>
+                    <span class="text-lg sm:text-xl font-black tracking-wider">株式会社APD</span>
+                </div>
+                <p class="text-[12px] sm:text-xs text-[#004619] font-medium">介護の未来を創る</p>
+            </div>
+
+            <!-- Navigation Links in Footer -->
+            <div class="flex flex-wrap justify-center items-center gap-x-3 sm:gap-x-4 gap-y-2.5 text-sm text-white font-medium">
+                <a href="index.html" class="hover:text-[#fef263] py-1">ホーム</a>
+                <span class="opacity-30">|</span>
+                <a href="sns.html" class="hover:text-[#fef263] py-1">YouTube・SNS</a>
+                <span class="opacity-30">|</span>
+                <a href="#" class="text-[#fef263] py-1">サービス概要</a>
+                <span class="opacity-30">|</span>
+                <a href="profile.html" class="hover:text-[#fef263] py-1">代表挨拶</a>
+                <span class="opacity-30">|</span>
+                <a href="company.html" class="hover:text-[#fef263] py-1">会社概要</a>
+                <span class="opacity-30">|</span>
+                <a href="contact.html" class="hover:text-[#fef263] py-1">お問い合わせ</a>
+                <span class="opacity-30">|</span>
+                <a href="policy.html" class="hover:text-[#fef263] py-1">プライバシーポリシー</a>
+                <span class="opacity-30">|</span>
+                <a href="tokusho.html" class="hover:text-[#fef263] py-1">特定商取引法に基づく表記</a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-[10px] sm:text-[11px] font-regular text-[#004619] pt-3">
+                &copy; 2026 株式会社APD. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE MODALS -->
+
+    <!-- Modal: お問い合わせ・無料相談フォーム -->
+    <div id="contactModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-3 sm:p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[92vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300">
+            <div class="p-5 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-10">
+                <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                    <span class="w-2 h-5 bg-brandOrange rounded"></span>
+                    無料相談・お問い合わせ
+                </h3>
+                <button onclick="closeModal('contactModal')" class="text-gray-400 hover:text-gray-600 transition-colors p-2">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <form onsubmit="handleFormSubmit(event)" class="p-5 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">お名前 <span class="text-red-500">※必須</span></label>
+                    <input type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="山田 太郎">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">貴社名 / 事業所名 <span class="text-red-500">※必須</span></label>
+                    <input type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="株式会社〇〇 介護ヘルプ">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">メールアドレス <span class="text-red-500">※必須</span></label>
+                    <input type="email" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="example@domain.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">ご相談内容 <span class="text-red-500">※必須</span></label>
+                    <textarea required rows="4" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="オンライン法定研修のご利用について、または経営改善のご相談など、詳細をご記入ください。"></textarea>
+                </div>
+                
+                <div class="bg-red-50 border border-red-100 p-3 rounded-lg">
+                    <p class="text-[11px] text-red-600 font-bold">【営業目的のご連絡はご遠慮ください】</p>
+                    <p class="text-[10px] text-gray-500 mt-1 leading-snug">介護事業所様および経営者様へのサービス提供を目的としているため、他社からの広告配信・営業アプローチメール等には一切返信いたしません。</p>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-brandOrange hover:bg-brandOrangeHover text-white font-bold py-3 sm:py-3.5 rounded-full shadow-lg shadow-brandOrange/25 transition-all text-sm sm:text-base min-h-[44px]">
+                        この内容で送信する（デモ）
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification (デモ仮受付用) -->
+    <div id="toast" class="fixed bottom-4 right-4 left-4 sm:left-auto bg-gray-900 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-28 opacity-0 transition-all duration-300 z-50">
+        <i class="fa-solid fa-circle-check text-brandGreen text-xl flex-shrink-0"></i>
+        <div>
+            <p id="toastTitle" class="text-xs sm:text-sm font-bold">デモ：お問い合わせを仮受付しました</p>
+            <p id="toastDesc" class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">実際のご相談は別途メールフォーム等で対応可能です。</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('img').forEach(function(img) {
+                const src = img.getAttribute('src');
+                if (!src || src.trim() === "" || src === "#") {
+                    imageLoadError(img);
+                }
+            });
+        });
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            modal.offsetHeight;
+            modal.classList.add('opacity-100');
+            modal.querySelector('div').classList.add('scale-100');
+            modal.querySelector('div').classList.remove('scale-95');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.remove('opacity-100');
+            modal.querySelector('div').classList.add('scale-95');
+            modal.querySelector('div').classList.remove('scale-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                const allModals = document.querySelectorAll('[id$=\"Modal\"]');
+                let anyOpen = false;
+                allModals.forEach(m => {
+                    if (!m.classList.contains('hidden') && m.id !== modalId) {
+                        anyOpen = true;
+                    }
+                });
+                if (!anyOpen) document.body.style.overflow = '';
+            }, 300);
+        }
+
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('[id$=\"Modal\"]');
+            modals.forEach(modal => {
+                if (event.target === modal) closeModal(modal.id);
+            });
+        }
+
+        function showDemoToast(message, subtitle = "デモ環境につき実際の手続きは発生しません。") {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').innerText = message;
+            document.getElementById('toastDesc').innerText = subtitle;
+            toast.classList.remove('translate-y-28', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.add('translate-y-28', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 5000);
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            closeModal('contactModal');
+            showDemoToast("デモ：お問い合わせを仮受付しました", "送信内容の記録を模擬保存しました。");
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

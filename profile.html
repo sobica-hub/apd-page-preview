@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代表挨拶 - 株式会社APD</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#1bbb86',     /* 鮮やかなミントグリーン */
+                        brandGreenLight: '#e8f8f3',/* 優しい緑の背景用 */
+                        brandOrange: '#ff8d42',    /* アクセントオレンジ */
+                        brandOrangeHover: '#e67325',
+                        brandOrangeLight: '#fff4ec',/* オレンジの背景用 */
+                        textDark: '#2d3748',       /* 柔らかい黒 */
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    }
+                }
+            }
+        };
+
+        function imageLoaded(imgElement) {
+            const src = imgElement.getAttribute('src');
+            if (!src || src.trim() === "" || src === "#") {
+                imageLoadError(imgElement);
+                return;
+            }
+            imgElement.classList.remove('hidden');
+            const placeholder = imgElement.nextElementSibling;
+            if (placeholder && placeholder.classList.contains('placeholder-fallback')) {
+                placeholder.classList.add('hidden');
+            }
+        }
+
+        function imageLoadError(imgElement) {
+            imgElement.classList.add('hidden');
+            const placeholder = imgElement.nextElementSibling;
+            if (placeholder && placeholder.classList.contains('placeholder-fallback')) {
+                placeholder.classList.remove('hidden');
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-textDark antialiased leading-relaxed overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="bg-white border-b border-gray-100 py-3 px-3 md:px-8 overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-row justify-between items-center gap-1 sm:gap-2">
+            <!-- Logo & Brand Name -->
+            <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group flex-shrink-0">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-brandGreen text-white rounded-xl flex items-center justify-center font-bold shadow-md shadow-brandGreen/25 transform group-hover:rotate-3 transition-transform flex-shrink-0">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
+                </div>
+                <div class="flex-shrink-0">
+                    <h1 class="text-sm sm:text-lg md:text-2xl font-black tracking-wider text-gray-800 leading-none">株式会社APD</h1>
+                </div>
+            </a>
+            
+            <!-- Catchphrase (Right) -->
+            <div class="text-right text-xs text-gray-600 font-bold flex-shrink-1 min-w-0 max-w-[170px] sm:max-w-none">
+                <p class="text-brandGreen font-extrabold text-[9px] sm:text-xs leading-none">【介護事業者向け】</p>
+                <p class="text-[8px] sm:text-[10px] md:text-[11px] text-gray-500 font-medium mt-1 leading-tight sm:leading-snug break-all sm:break-normal">
+                    オンライン法定研修・運営指導対策・認知症GH経営支援
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION BAR (代表挨拶を黄色にハイライト) -->
+    <nav class="bg-brandGreen sticky top-0 z-40 shadow-md overflow-hidden">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-between sm:justify-center items-center py-2 sm:py-3.5 px-2 text-white text-[10px] sm:text-sm md:text-base font-bold gap-0.5 sm:gap-2 w-full max-w-full tracking-tighter sm:tracking-normal">
+                <a href="index.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">ホーム</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="sns.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">YouTube<br class="inline sm:hidden">・SNS</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="service.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">サービス<br class="inline sm:hidden">概要</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="#" class="px-1 py-1 text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">代表<br class="inline sm:hidden">挨拶</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="company.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">会社<br class="inline sm:hidden">概要</span>
+                </a>
+                <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
+                <a href="contact.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
+                    <span class="inline-block">お問い<br class="inline sm:hidden">合わせ</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="w-full min-h-screen bg-white overflow-hidden">
+
+        <!-- HERO SECTION -->
+        <section class="w-full relative border-b border-emerald-100">
+            <div class="w-full bg-emerald-50 aspect-[16/6] md:aspect-[21/6] min-h-[160px] md:max-h-[350px] flex items-center justify-center relative overflow-hidden">
+                <img src="MAR88_kabintotabel_TP_V.jpg" alt="代表挨拶メインビジュアル" class="absolute inset-0 w-full h-full object-cover z-0 hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                
+                <div class="placeholder-fallback absolute inset-0 bg-gradient-to-br from-emerald-100/50 via-emerald-50/30 to-white/20 flex items-center justify-center z-0">
+                    <svg class="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="0 0 100 100">
+                        <line x1="30" y1="0" x2="30" y2="100" stroke="#1bbb86" stroke-width="0.3"/>
+                        <line x1="70" y1="0" x2="70" y2="100" stroke="#1bbb86" stroke-width="0.3"/>
+                        <line x1="0" y1="40" x2="100" y2="40" stroke="#1bbb86" stroke-width="0.3"/>
+                        <path d="M10,10 Q25,0 35,20 T15,40 Z" fill="#1bbb86" fill-opacity="0.1"/>
+                        <path d="M80,20 Q95,5 90,35 T70,50 Z" fill="#1bbb86" fill-opacity="0.15"/>
+                        <path d="M5,60 Q30,70 20,95 T0,80 Z" fill="#1bbb86" fill-opacity="0.08"/>
+                    </svg>
+                </div>
+
+                <!-- Overlay content -->
+                <div class="relative z-10 text-center px-4">
+                    <h2 class="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
+                        代表挨拶
+                    </h2>
+                    <p class="text-[10px] sm:text-xs md:text-sm font-bold text-white/90 tracking-[0.3em] uppercase mt-2 drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">
+                        MESSAGE
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFILE BLOCK -->
+        <section class="py-10 sm:py-14 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+                
+                <div class="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-6 pb-8 border-b border-gray-150 mb-10">
+                    <!-- Photo Column -->
+                    <div class="w-full sm:w-1/2 flex justify-center sm:justify-start order-1 sm:order-2">
+                        <div class="w-full max-w-[320px] h-60 bg-slate-100 rounded-lg overflow-hidden border border-slate-200 shadow-md flex items-center justify-center relative">
+                            <img src="ishibashi.png" alt="代表取締役 石林秀男" class="w-full h-full object-cover hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
+                            <div class="placeholder-fallback flex flex-col items-center justify-center text-center p-4 text-slate-500">
+                                <svg class="w-20 h-20 text-slate-300 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                                <p class="font-bold text-sm">石林 秀男 代表近影</p>
+                                <p class="text-[10px] opacity-75 mt-0.5">【代表取締役 石林秀男】</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Name and title Column -->
+                    <div class="w-full sm:w-1/2 flex items-center gap-4 order-2 sm:order-1">
+                        <div class="w-1 h-20 bg-gray-300 flex-shrink-0 rounded-full"></div>
+                        <div class="space-y-1">
+                            <p class="text-xs sm:text-sm font-bold text-gray-500 tracking-wider">株式会社APD 代表取締役</p>
+                            <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-800 tracking-wide">石林 秀男</h3>
+                            <p class="text-[10px] sm:text-xs font-bold text-gray-400 tracking-[0.2em] uppercase">Hideo Ishibayashi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Belief section -->
+                <div class="space-y-4">
+                    <p class="text-xs font-extrabold text-brandOrange tracking-widest uppercase">OUR BELIEF</p>
+                    <h4 class="text-xl sm:text-2xl font-black text-gray-800 tracking-wide leading-tight" style="text-indent: -0.4em; padding-left: 0.2em;">
+                        「正しさより、安心を」
+                    </h4>
+                    <p class="text-sm sm:text-base md:text-lg text-gray-600 font-medium leading-relaxed mt-4">
+                        介護の現場に身を置いて25年。<br>お一人おひとりの「人生という名の物語」の最後まで支える使命。<br>それが私の誇りです。
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CARDS SECTION -->
+        <section class="py-10 sm:py-16 bg-brandGreenLight w-full">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 md:px-8 space-y-8">
+                
+                <!-- CARD 1 -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-brandGreen/5 border border-white/80 space-y-4">
+                    <div class="flex flex-col items-start gap-1">
+                        <h5 class="text-lg sm:text-xl font-black text-gray-800 flex items-center gap-2.5 relative pl-4">
+                            <span class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brandOrange to-orange-300 rounded-full"></span>
+                            介護現場の現状を知る人間として
+                        </h5>
+                        <div class="flex w-full items-center gap-1.5 mt-1.5">
+                            <div class="w-12 h-0.5 bg-brandOrange rounded-full"></div>
+                            <div class="w-1.5 h-0.5 bg-brandOrange/30 rounded-full"></div>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm md:text-[15.5px] text-gray-600 font-medium text-justify pt-4" style="font-feature-settings: 'halt'; letter-spacing: 0.02em; line-height: 1.8;">
+                        かつて現場に出たばかりの頃、私は介護を「決められた通りにこなすもの」と勘違いしていました。<br><br>
+                        しかしある時、利用者様からいただいた「あんたと出会えてよかった」という心からの言葉。<br>
+                        その瞬間、私は介護が「お一人おひとりの『人生という名の物語』の最終幕を支える、尊い使命」だと気づかされたのです。<br><br>
+                        以来25年間,私は無我夢中で現場に立ち続けてきました。<br>
+                        しかし同時に、私の心に深く影を落としてきたものがあります。<br>
+                        それは、誰よりも高い志を持った優しい職員たちが、過酷な環境の中でボロボロに疲弊し、涙をのんで現場を去っていく姿でした。
+                    </p>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-brandGreen/5 border border-white/80 space-y-4">
+                    <div class="flex flex-col items-start gap-1">
+                        <h5 class="text-lg sm:text-xl font-black text-gray-800 flex items-center gap-2.5 relative pl-4">
+                            <span class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brandOrange to-orange-300 rounded-full"></span>
+                            経営者の皆様と共に、現場を守る
+                        </h5>
+                        <div class="flex w-full items-center gap-1.5 mt-1.5">
+                            <div class="w-12 h-0.5 bg-brandOrange rounded-full"></div>
+                            <div class="w-1.5 h-0.5 bg-brandOrange/30 rounded-full"></div>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm md:text-[15.5px] text-gray-600 font-medium text-justify pt-4" style="font-feature-settings: 'halt'; letter-spacing: -0.005em; line-height: 2.0;">
+                        現場を預かる経営者の皆様も,同じように胸を痛めているのではないでしょうか。<br>
+                        職員には「その人らしさを尊重するケア」をしてほしい。<br>
+                        けれど、人手不足や教育体制の限界を前に、どうにもならないジレンマを抱えているはずです。<br>
+                        現場の疲弊は、決して職員の努力不足でも、経営者様だけの責任でもありません。<br><br>
+                        業界全体として「現場を支える仕組み」が決定的に欠落しているのです。<br><br>
+                        大切な職員を守り抜き、利用者様に質の高いケアを提供し続けること。<br>
+                        それは、現場で25年過ごしてきた私と、孤独な重圧と戦う経営者の皆様に共通する、最も切実な願いのはずです。
+                    </p>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-brandGreen/5 border border-white/80 space-y-4">
+                    <div class="flex flex-col items-start gap-1">
+                        <h5 class="text-lg sm:text-xl font-black text-gray-800 flex items-center gap-2.5 relative pl-4">
+                            <span class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brandOrange to-orange-300 rounded-full"></span>
+                            学びを止めない介護へ
+                        </h5>
+                        <div class="flex w-full items-center gap-1.5 mt-1.5">
+                            <div class="w-12 h-0.5 bg-brandOrange rounded-full"></div>
+                            <div class="w-1.5 h-0.5 bg-brandOrange/30 rounded-full"></div>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm md:text-[15.5px] text-gray-600 font-medium text-justify pt-4" style="font-feature-settings: 'halt'; letter-spacing: 0.04em; line-height: 1.8;">
+                        この状況を、私はどうしても変えたい。<br>
+                        だからこそ私は、現場を外から支える「防波堤」となるべく独立し、株式会社APDを設立しました。<br><br>
+                        私がご提案するのは「現場が学びを止めない仕組み」です。<br>
+                        オンライン研修や専門相談を通じて、職員を決して孤立させず、働きながら自信と誇りを育てていく環境を私たちが全力でサポートします。<br><br>
+                        もう、大切な職員の離職にため息をつくのは終わりにしませんか。<br>
+                        現場に再び誇りと、心からの笑顔を取り戻すために。<br>
+                        貴社が抱える切実なお悩みを、私にすべてぶつけてください。<br><br>
+                        共に、職員が安心して幸せに働き続けられる未来を作りましょう。
+                    </p>
+                </div>
+
+                <!-- NAVIGATION BUTTONS -->
+                <div class="pt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="service.html" class="inline-flex items-center justify-center bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-lg px-8 py-3.5 rounded-full shadow-lg shadow-brandOrange/35 hover:shadow-brandOrange/50 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[48px] text-center">
+                     <i class="fa-solid fa-circle-info mr-2 text-lg"></i> サービス概要へ
+                    </a>
+                    <a href="company.html" class="inline-flex items-center justify-center bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-lg px-8 py-3.5 rounded-full shadow-lg shadow-brandOrange/35 hover:shadow-brandOrange/50 transform hover:-translate-y-0.5 transition-all duration-300 w-full max-w-xs min-h-[48px] text-center">
+                     <i class="fa-solid fa-building mr-2 text-lg"></i> 会社概要へ
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER (代表挨拶を黄色にハイライト) -->
+    <footer class="bg-brandGreen text-white py-10 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <!-- Social Accounts -->
+            <div class="space-y-4">
+                <h4 class="text-base sm:text-lg font-bold tracking-wider">公式SNSアカウント</h4>
+                <div class="flex justify-center items-center gap-5 sm:gap-6 text-2xl sm:text-3xl md:text-4xl">
+                    <a href="https://www.instagram.com/kaigo_no_hidechannel/" target="_blank" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" onclick="return false;" title="Facebook（URL確認中）" aria-disabled="true" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" onclick="return false;" title="TikTok（URL確認中）" aria-disabled="true" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.threads.com/@kaigo_no_hidechannel?xmt=AQG0LuBmjoE1n0MAFNwBetNoZ9_e8P_bYN0vwNJ0SV557wQ" target="_blank" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2 flex items-center justify-center" title="Threads">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-threads w-[1em] h-[1em]" viewBox="0 0 16 16">
+                            <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com/@HIDEKING-APD?sub_confirmation=1" target="_blank" class="hover:scale-110 transition-transform hover:text-[#fef263] p-2">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand / Logo bottom -->
+            <div class="space-y-2 pt-4 border-t border-white/20">
+                <div class="flex justify-center items-center gap-2">
+                    <div class="w-7 h-7 bg-white text-brandGreen rounded flex items-center justify-center font-bold text-sm flex-shrink-0">
+                        A
+                    </div>
+                    <span class="text-lg sm:text-xl font-black tracking-wider">株式会社APD</span>
+                </div>
+                <p class="text-[12px] sm:text-xs text-[#004619] font-medium">介護の未来を創る</p>
+            </div>
+
+            <!-- Navigation Links in Footer (代表挨拶を黄色にハイライト) -->
+            <div class="flex flex-wrap justify-center items-center gap-x-3 sm:gap-x-4 gap-y-2.5 text-sm text-white font-medium">
+                <a href="index.html" class="hover:text-[#fef263] py-1">ホーム</a>
+                <span class="opacity-30">|</span>
+                <a href="sns.html" class="hover:text-[#fef263] py-1">YouTube・SNS</a>
+                <span class="opacity-30">|</span>
+                <a href="service.html" class="hover:text-[#fef263] py-1">サービス概要</a>
+                <span class="opacity-30">|</span>
+                <a href="#" class="text-[#fef263] py-1">代表挨拶</a>
+                <span class="opacity-30">|</span>
+                <a href="company.html" class="hover:text-[#fef263] py-1">会社概要</a>
+                <span class="opacity-30">|</span>
+                <a href="contact.html" class="hover:text-[#fef263] py-1">お問い合わせ</a>
+                <span class="opacity-30">|</span>
+                <a href="policy.html" class="hover:text-[#fef263] py-1">プライバシーポリシー</a>
+                <span class="opacity-30">|</span>
+                <a href="tokusho.html" class="hover:text-[#fef263] py-1">特定商取引法に基づく表記</a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-[10px] sm:text-[11px] font-regular text-[#004619] pt-3">
+                &copy; 2026 株式会社APD. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE MODALS -->
+
+    <!-- Modal 1: お問い合わせ・無料相談フォーム -->
+    <div id="contactModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-3 sm:p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[92vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300">
+            <div class="p-5 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-10">
+                <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                    <span class="w-2 h-5 bg-brandOrange rounded"></span>
+                    無料相談・お問い合わせ
+                </h3>
+                <button onclick="closeModal('contactModal')" class="text-gray-400 hover:text-gray-600 transition-colors p-2">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <form onsubmit="handleFormSubmit(event)" class="p-5 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">お名前 <span class="text-red-500">※必須</span></label>
+                    <input type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="山田 太郎">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">貴社名 / 事業所名 <span class="text-red-500">※必須</span></label>
+                    <input type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="株式会社〇〇 介護ヘルプ">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">メールアドレス <span class="text-red-500">※必須</span></label>
+                    <input type="email" required class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="example@domain.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-600 mb-1">ご相談内容 <span class="text-red-500">※必須</span></label>
+                    <textarea required rows="4" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen" placeholder="代表メッセージをご覧いただき、ご共感いただいた点や、経営課題の解決、研修サポートのご相談など自由にご記入ください。"></textarea>
+                </div>
+                
+                <div class="bg-red-50 border border-red-100 p-3 rounded-lg">
+                    <p class="text-[11px] text-red-600 font-bold">【営業目的のご連絡はご遠慮ください】</p>
+                    <p class="text-[10px] text-gray-500 mt-1 leading-snug">介護事業所様および経営者様へのサービス提供を目的としているため、他社からの広告配信・営業アプローチメール等には一切返信いたしません。</p>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-brandOrange hover:bg-brandOrangeHover text-white font-bold py-3 sm:py-3.5 rounded-full shadow-lg shadow-brandOrange/20 transition-all text-sm sm:text-base min-h-[44px]">
+                        この内容で送信する（デモ）
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification (デモ仮受付用) -->
+    <div id="toast" class="fixed bottom-4 right-4 left-4 sm:left-auto bg-gray-900 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-28 opacity-0 transition-all duration-300 z-50">
+        <i class="fa-solid fa-circle-check text-brandGreen text-xl flex-shrink-0"></i>
+        <div>
+            <p id="toastTitle" class="text-xs sm:text-sm font-bold">デモ：お問い合わせを仮受付しました</p>
+            <p id="toastDesc" class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">実際のご相談は別途メールフォーム等で対応可能です。</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('img').forEach(function(img) {
+                const src = img.getAttribute('src');
+                if (!src || src.trim() === "" || src === "#") {
+                    imageLoadError(img);
+                }
+            });
+        });
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            modal.offsetHeight;
+            modal.classList.add('opacity-100');
+            modal.querySelector('div').classList.add('scale-100');
+            modal.querySelector('div').classList.remove('scale-95');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.remove('opacity-100');
+            modal.querySelector('div').classList.add('scale-95');
+            modal.querySelector('div').classList.remove('scale-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                const allModals = document.querySelectorAll('[id$="Modal"]');
+                let anyOpen = false;
+                allModals.forEach(m => {
+                    if (!m.classList.contains('hidden') && m.id !== modalId) {
+                        anyOpen = true;
+                    }
+                });
+                if (!anyOpen) document.body.style.overflow = '';
+            }, 300);
+        }
+
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('[id$="Modal"]');
+            modals.forEach(modal => {
+                if (event.target === modal) closeModal(modal.id);
+            });
+        }
+
+        function showDemoToast(message, subtitle = "デモ環境につき実際の手続きは発生しません。") {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').innerText = message;
+            document.getElementById('toastDesc').innerText = subtitle;
+            toast.classList.remove('translate-y-28', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.add('translate-y-28', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 5000);
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            closeModal('contactModal');
+            showDemoToast("デモ：お問い合わせを仮受付しました", "送信情報の記録を模擬保存しました。");
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
