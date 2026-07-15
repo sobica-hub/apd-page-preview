@@ -1,4 +1,4 @@
-const GAS_WEB_APP_URL = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyXS4aOXEA_zRRlH1ScNojKkVilgt9dLwG1XBXMm8mvJd9QIxvdNv-dFbtyLZSozE_AEA/exec";
 
 (function () {
   const target = document.getElementById("youtube-latest-videos");
