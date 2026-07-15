@@ -207,14 +207,16 @@
 </head>
 <body class="font-sans bg-white text-textDark antialiased leading-relaxed overflow-x-hidden">
 
-    <!-- HEADER -->
-    <header class="bg-white border-b border-gray-100 py-4 px-3 md:px-8 overflow-hidden">
+    <!-- HEADER (共通の美しさを完全維持) -->
+    <header class="bg-white border-b border-gray-100 py-3 px-3 md:px-8 overflow-hidden">
         <div class="max-w-6xl mx-auto flex flex-row justify-between items-center gap-1 sm:gap-2">
             <!-- Logo & Brand Name -->
             <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group flex-shrink-0">
-                
-                <img src="APD_logo.svg" alt="株式会社APD" class="h-10 sm:h-12 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105">
-
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-brandGreen text-white rounded-xl flex items-center justify-center font-bold shadow-md shadow-brandGreen/25 transform group-hover:rotate-3 transition-transform flex-shrink-0">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
+                </div>
                 <div class="flex-shrink-0">
                     <h1 class="text-sm sm:text-lg md:text-2xl font-black tracking-wider text-gray-800 leading-none">株式会社APD</h1>
                 </div>
@@ -233,28 +235,28 @@
     <!-- NAVIGATION BAR (現在地としてカイゴのひでChannelを黄色ハイライト、③スマホ用改行タグを確実に維持) -->
     <nav class="bg-brandGreen sticky top-0 z-40 shadow-md overflow-hidden">
         <div class="max-w-4xl mx-auto">
-            <div class="flex justify-between sm:justify-center items-center py-3 sm:py-3.5 px-2 text-white font-bold text-xs sm:text-sm md:text-base gap-1 sm:gap-2 w-full max-w-full sm:tracking-normal">
-                <a href="index.html" class="px-1 py-2 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-snug sm:px-4">
+            <div class="flex justify-between sm:justify-center items-center py-2 sm:py-3.5 px-2 text-white text-[10px] sm:text-sm md:text-base font-bold gap-0.5 sm:gap-2 w-full max-w-full tracking-tighter sm:tracking-normal">
+                <a href="index.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
                     <span class="inline-block">ホーム</span>
                 </a>
                 <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
-                <a href="#" class="px-1 py-2 text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-snug sm:px-4">
+                <a href="#" class="px-1 py-1 text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
                     <span class="inline-block">YouTube<br class="inline sm:hidden">・SNS</span>
                 </a>
                 <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
-                <a href="service.html" class="px-2 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-snug sm:px-4">
+                <a href="service.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
                     <span class="inline-block">サービス<br class="inline sm:hidden">概要</span>
                 </a>
                 <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
-                <a href="profile.html" class="px-1 py-2 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-snug sm:px-4">
+                <a href="profile.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
                     <span class="inline-block">代表<br class="inline sm:hidden">挨拶</span>
                 </a>
                 <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
-                <a href="company.html" class="px-1 py-2 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-snug sm:px-4">
+                <a href="company.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
                     <span class="inline-block">会社<br class="inline sm:hidden">概要</span>
                 </a>
                 <span class="opacity-40 text-xs flex-shrink-0 hidden sm:inline">|</span>
-                <a href="contact.html" class="px-1 py-2 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-snug sm:px-4">
+                <a href="contact.html" class="px-1 py-1 hover:text-[#fef263] transition-colors flex-1 sm:flex-none text-center leading-tight sm:px-4">
                     <span class="inline-block">お問い<br class="inline sm:hidden">合わせ</span>
                 </a>
             </div>
@@ -484,17 +486,15 @@
             <!-- Brand / Logo bottom -->
             <div class="space-y-2 pt-4">
                 <div class="flex justify-center items-center gap-2">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <img src="APD_logo.svg" alt="株式会社APD" class="h-10 w-auto">
-                    <div>
-                        <h3 class="text-xl sm:text-2xl font-black text-white tracking-wider">株式会社APD</h3>
+                    <div class="w-7 h-7 bg-white text-brandGreen rounded flex items-center justify-center font-bold text-sm flex-shrink-0">
+                        A
                     </div>
-                    </a>
+                    <span class="text-lg sm:text-xl font-black tracking-wider">株式会社APD</span>
                 </div>
-                <p class="text-sm sm:text-base text-[#004619] font-medium">介護の未来を創る</p>
+                <p class="text-[12px] sm:text-xs text-[#004619] font-medium">介護の未来を創る</p>
             </div>
 
-            <!-- Navigation Links in Footer -->
+            <!-- Navigation Links in Footer (プライバシーポリシー policy.html を黄色ハイライト) -->
             <div class="flex flex-wrap justify-center items-center gap-x-3 sm:gap-x-4 gap-y-2.5 text-sm text-white font-medium">
                 <a href="index.html" class="hover:text-[#fef263] py-1">ホーム</a>
                 <span class="opacity-30">|</span>
@@ -514,11 +514,12 @@
             </div>
 
             <!-- Copyright -->
-            <p class="text-xs sm:text-sm font-regular text-[#004619] pt-3">
+            <p class="text-[10px] sm:text-[11px] font-regular text-[#004619] pt-3">
                 &copy; 2026 株式会社APD. All Rights Reserved.
             </p>
         </div>
     </footer>
+
 <script src="./apd-sns-latest-videos-gas.js" defer></script>
 </body>
 </html>
