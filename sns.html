@@ -349,39 +349,12 @@
                     最新の解説動画（3本）
                 </h2>
 
-                <div class="yt-latest-grid">
+                <div id="youtube-latest-videos" class="yt-latest-grid" aria-live="polite">
                     
                     <!-- ①②動画カード 1 (画像に重なっている再生ボタンアイコン yt-play-icon を完全に消去、画像にYouTubeMovie_1.jpgをセット) -->
-                    <a href="https://youtu.be/YRsd1AQ49fA?si=SY2sOZMbS4PFm9Gv" target="_blank" class="yt-card group block overflow-hidden transition-all duration-300 hover:scale-[1.01]">
-                        <div class="yt-card-media relative">
-                            <!-- ロードエラーを防止する二重構造ハンドラ付き画像マウント -->
-                            <img src="YouTubeMovie_1.jpg" alt="センサーマットは生産性向上？身体拘束？" class="yt-thumbnail w-full h-full object-cover hidden" onload="imageLoaded(this)" onerror="imageLoadError(this)">
-                            
-                            <!-- フォールバック用グラデーション背景（画像が見つからない・ローカルパス時の保護） -->
-                            <div class="placeholder-fallback absolute inset-0 bg-gradient-to-br from-emerald-500 via-brandGreen to-teal-600 flex items-center justify-center">
-                                <i class="fa-solid fa-video text-white/10 text-9xl absolute pointer-events-none"></i>
-                                <span class="text-white font-extrabold text-sm tracking-widest bg-black/25 px-4 py-1.5 rounded-full border border-white/20 relative z-10 uppercase">
-                                    解説動画 #1
-                                </span>
-                            </div>
-                        </div>
-                        <div class="yt-card-body">
-                            <div class="yt-meta">
-                                <span class="yt-category">業務改善</span>
-                                <span class="yt-date">2026.04.07</span>
-                            </div>
-                            <!-- 全文表示されるよう行制限削除済のタイトル (haltによる約物詰め適用) -->
-                            <h4 class="yt-title" style="font-feature-settings: 'halt';">
-                                そのセンサー、自由を奪っていませんか？「見守り」と「制限」のあいだ
-                            </h4>
-                            <!-- 全文表示＆カラーを gray-600 に調整済の解説文 (haltによる約物詰め適用) -->
-                            <p class="yt-description text-gray-600" style="font-feature-settings: 'halt';">
-                                【解説】<br>
-                                「転倒させたくない」という想いが、いつの間にか行動制限になっていないか。センサーマットの運用を見直し、過剰な介入を減らす。<br>
-                                テクノロジーを正しく使い、利用者様の自由とチームケアの両立を目指すための提言です。
-                            </p>
-                        </div>
-                    </a>
+                  <div class="bg-white rounded-2xl p-6 shadow-sm border border-[#bedfc2]/50 text-center text-gray-600 md:col-span-3">
+  最新動画を読み込んでいます...
+</div>  
 
                     <!-- 動画カード 2 (業務効率化：再生ボタンアイコンを完全に消去、画像にYouTubeMovie_2.jpgをセット) -->
                     <a href="https://youtu.be/rUBZgffvQBk?si=ATBlxCBtQfV31ffq" target="_blank" class="yt-card group block overflow-hidden transition-all duration-300 hover:scale-[1.01]">
@@ -482,7 +455,7 @@
                         <p class="text-[12px] text-gray-600 mt-2 leading-relaxed flex-grow">
                             現場の日常とケアのヒントを写真で。
                         </p>
-                        <a href="https://www.instagram.com/kaigo_no_hidechannel/" target="_blank" class="mt-4 w-full bg-brandGreen hover:bg-emerald-500 text-white font-bold text-xs py-2 px-3 rounded-full transition-all text-center">
+                        <a href="https://instagram.com" target="_blank" class="mt-4 w-full bg-brandGreen hover:bg-emerald-500 text-white font-bold text-xs py-2 px-3 rounded-full transition-all text-center">
                             フォローする
                         </a>
                     </div>
@@ -497,7 +470,7 @@
                         <p class="text-[12px] text-gray-600 mt-2 leading-relaxed flex-grow">
                             セミナー情報や活動報告を随時更新。
                         </p>
-                        <a href="#" onclick="return false;" title="Facebook（URL確認中）" aria-disabled="true" class="mt-4 w-full bg-brandGreen hover:bg-emerald-500 text-white font-bold text-xs py-2 px-3 rounded-full transition-all text-center">
+                        <a href="https://facebook.com" target="_blank" class="mt-4 w-full bg-brandGreen hover:bg-emerald-500 text-white font-bold text-xs py-2 px-3 rounded-full transition-all text-center">
                             フォローする
                         </a>
                     </div>
@@ -512,7 +485,7 @@
                         <p class="text-[12px] text-gray-600 mt-2 leading-relaxed flex-grow">
                             30秒で学べる！<br>介護スキルのコツ。
                         </p>
-                        <a href="#" onclick="return false;" title="TikTok（URL確認中）" aria-disabled="true" class="mt-4 w-full bg-brandGreen hover:bg-emerald-500 text-white font-bold text-xs py-2 px-3 rounded-full transition-all text-center">
+                        <a href="https://tiktok.com" target="_blank" class="mt-4 w-full bg-brandGreen hover:bg-emerald-500 text-white font-bold text-xs py-2 px-3 rounded-full transition-all text-center">
                             フォローする
                         </a>
                     </div>
@@ -529,7 +502,7 @@
                         <p class="text-[12px] text-gray-600 mt-2 leading-relaxed flex-grow" style="font-feature-settings: 'halt';">
                             介護現場の「本音」と<br>「気づき」を綴る。
                         </p>
-                        <a href="https://www.threads.com/@kaigo_no_hidechannel?xmt=AQG0LuBmjoE1n0MAFNwBetNoZ9_e8P_bYN0vwNJ0SV557wQ" target="_blank" class="mt-4 w-full bg-brandGreen hover:bg-emerald-500 text-white font-bold text-xs py-2 px-3 rounded-full transition-all text-center">
+                        <a href="https://threads.net" target="_blank" class="mt-4 w-full bg-brandGreen hover:bg-emerald-500 text-white font-bold text-xs py-2 px-3 rounded-full transition-all text-center">
                             フォローする
                         </a>
                     </div>
@@ -544,7 +517,7 @@
                         <p class="text-[12px] text-gray-600 mt-2 leading-relaxed flex-grow">
                             深く、濃く。<br>介護DXの核心を動画で。
                         </p>
-                        <a href="https://youtube.com/@HIDEKING-APD?sub_confirmation=1" target="_blank" class="mt-4 w-full bg-brandGreen hover:bg-emerald-500 text-white font-bold text-xs py-2 px-3 rounded-full transition-all text-center">
+                        <a href="https://youtube.com" target="_blank" class="mt-4 w-full bg-brandGreen hover:bg-emerald-500 text-white font-bold text-xs py-2 px-3 rounded-full transition-all text-center">
                             フォローする
                         </a>
                     </div>
@@ -612,5 +585,5 @@
         </div>
     </footer>
 
-</body>
+<script src="./apd-sns-latest-videos-gas.js" defer></script></body>
 </html>
