@@ -227,6 +227,19 @@
   }
 }
 </style>
+    @media (max-width: 767px) {
+  html,
+  body,
+  main {
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+
+  main {
+    overflow-x: hidden !important;
+  }
+}
 </head>
 <body class="font-sans bg-white text-textDark antialiased leading-relaxed overflow-x-hidden">
 
@@ -285,7 +298,7 @@
     </nav>
 
     <!-- MAIN CONTENT CONTAINER -->
-    <main class="w-full min-h-screen bg-white overflow-hidden pb-16">
+    <main class="w-full min-h-screen bg-white overflow-x-hidden pb-16">
 
         <!-- HERO SECTION (背景に設定した画像が綺麗に見えるように黒グラデーションオーバーレイ効果を完全に削除) -->
         <section class="w-full relative border-b border-emerald-100">
