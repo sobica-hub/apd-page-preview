@@ -198,12 +198,35 @@
         }
 
         .yt-description {
-            margin: 0;
-            color: var(--yt-muted); /* gray-600 に統一 */
-            font-size: 13px;
-            line-height: 1.6;
-        }
-    </style>
+    margin: 0;
+    color: var(--yt-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .yt-latest-section,
+  .yt-latest-inner,
+  .yt-latest-grid,
+  #youtube-latest-videos,
+  .yt-card,
+  .yt-card-body,
+  .yt-description {
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+
+  .yt-latest-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .yt-description {
+    white-space: normal;
+  }
+}
+</style>
 </head>
 <body class="font-sans bg-white text-textDark antialiased leading-relaxed overflow-x-hidden">
 
